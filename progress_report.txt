@@ -1,0 +1,11 @@
+* description of application
+* getting data
+	* downloaded rdf files of metadata for all books in Project Gutenberg (updated 8 Oct 18 - 58,057 entries)
+		* book title: rdf:RDF/pgterms:ebook/dcterms:title
+		* author name: rdf:RDF/pgterms:ebook/dcterms:creator/pgterms:agent/pgterms:name
+		* book contents url (.txt file): rdf:RDF/pgterms:ebook/pgterms:file
+* assumptions about data
+* E/R diagram
+* database tables
+	* 
+* description of web interface

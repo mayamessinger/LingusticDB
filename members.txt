@@ -12,7 +12,6 @@ Maya Messinger
 		* book contents url (.txt file): rdf:RDF/pgterms:ebook/pgterms:file
 	* test parsing actual book contents
 		* HTML get request, word by word
-* create database schema
-
+* create initial sample database schema
 
 Ryan Piersma

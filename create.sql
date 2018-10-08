@@ -7,3 +7,6 @@ CREATE TABLE Books
 
 CREATE TABLE Authors
 (name VARCHAR(256) NOT NULL);
+
+CREATE VIEW AuthorStats(queried_author) AS
+	SELECT author, AVG(words_per_sentence), AVG(num_words), COUNT(title) FROM Books WHERE author = queried_author GROUP BY author;

@@ -7,5 +7,8 @@
 * assumptions about data
 * E/R diagram
 * database tables
-	* 
+	* see CREATE.sql
 * description of web interface
+	* search bar allowing to index on author name, book title
+	* upon selecting a book, will show all info from Books table (title, author, words per sentence, num words, etc.)
+	* upon selecting an author, will show all of that author's books, as well as averaged stats of their books

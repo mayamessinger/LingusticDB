@@ -6,12 +6,8 @@ Maya Messinger
 * created project Git repo, basic Milestone 1 files
 * tested interfacing with Project Gutenberg
 	* grab basic data
-		* downloaded rdf files of metadata for all books in Project Gutenberg (updated 8 Oct 18 - 58,057 entries)
-		* book title: rdf:RDF/pgterms:ebook/dcterms:title
-		* author name: rdf:RDF/pgterms:ebook/dcterms:creator/pgterms:agent/pgterms:name
-		* book contents url (.txt file): rdf:RDF/pgterms:ebook/pgterms:file
 	* test parsing actual book contents
 		* HTML get request, word by word
-* create initial sample database schema
+* create initial sample database schema and sample data
 
 Ryan Piersma

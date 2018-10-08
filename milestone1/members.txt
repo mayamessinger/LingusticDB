@@ -1,0 +1,15 @@
+Alex Angel
+
+John Benhart
+
+Maya Messinger
+* created project Git repo w/ basic Milestone 1 files
+* tested interfacing with Project Gutenberg
+	* grab basic data
+	* test parsing actual book contents
+		* HTML get request, word by word
+* create initial sample database schema and sample data
+* create sample queries to sample database
+* work on progress report
+
+Ryan Piersma

@@ -1,0 +1,17 @@
+* description of application
+* getting data
+	* downloaded rdf files of metadata for all books in Project Gutenberg (updated 8 Oct 18 - 58,057 entries)
+		* test queries w/ https://www.freeformatter.com/xpath-tester.html#ad-output
+		* book title: rdf:RDF/pgterms:ebook/dcterms:title
+		* author name: rdf:RDF/pgterms:ebook/dcterms:creator/pgterms:agent/pgterms:name (can be multiple)
+		* book contents url (.txt file): rdf:RDF/pgterms:ebook/pgterms:file
+		* unique id from parsing # in file value http://www.gutenberg.org/ebooks/___.rdf
+* assumptions about data
+	* author names are unique
+* E/R diagram
+* database tables
+	* see create.sql and load.sql
+* description of web interface
+	* search bar allowing to index on author name, book title
+	* upon selecting a book, will show all info from Books table (title, author, words per sentence, num words, etc.)
+	* upon selecting an author, will show all of that author's books, as well as averaged stats of their books

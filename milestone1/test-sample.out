@@ -1,0 +1,12 @@
+-- psql dbname -af test-sample.sql > test-sample.out
+SELECT * FROM GetAuthorStats('Austen, Jane');
+    author    | avg_words_per_sentence | avg_num_words | books_written 
+--------------+------------------------+---------------+---------------
+ Austen, Jane |                   15.5 |          6500 |             2
+(1 row)
+
+SELECT * FROM Books WHERE title LIKE 'dragons';
+ uid | title | author | words_per_sentence | num_words 
+-----+-------+--------+--------------------+-----------
+(0 rows)
+

@@ -10,7 +10,8 @@
 * assumptions about data
 	* author names are unique
 	* problem: Project Gutenberg includes a header on all files, but the header is not the same for all files.
-		* assume header will always end with "*** START OF TH[IS/E] PROJECT GUTENBERG EBOOK ____ ***
+		* assume header will always end with "*** START OF TH[IS/E] PROJECT GUTENBERG EBOOK ____ ***"
+		* assume book always ends with "*** END OF TH[IS/E] PROJECT GUTENBERG BOOK ____ ***"
 * E/R diagram
 * database tables
 	* see create.sql and load.sql

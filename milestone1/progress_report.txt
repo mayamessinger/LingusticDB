@@ -6,8 +6,11 @@
 		* author name: rdf:RDF/pgterms:ebook/dcterms:creator/pgterms:agent/pgterms:name (can be multiple)
 		* book contents url (.txt file): rdf:RDF/pgterms:ebook/pgterms:file
 		* unique id from parsing # in file value http://www.gutenberg.org/ebooks/___.rdf
+	* sample .rdf file saved as 'exampleBookrdf.xml'
 * assumptions about data
 	* author names are unique
+	* problem: Project Gutenberg includes a header on all files, but the header is not the same for all files.
+		* assume header will always end with "*** START OF TH[IS/E] PROJECT GUTENBERG EBOOK ____ ***
 * E/R diagram
 * database tables
 	* see create.sql and load.sql

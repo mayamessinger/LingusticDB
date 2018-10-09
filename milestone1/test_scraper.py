@@ -1,17 +1,28 @@
+import os
+import re
 import urllib3
 from bs4 import BeautifulSoup
+from xml.etree import ElementTree as ET
 
-book = BeautifulSoup(urllib3.PoolManager().request('GET', 'http://www.gutenberg.org/files/44836/44836.txt').data, 'lxml').get_text()
+def getBook(index):
+	return BeautifulSoup(urllib3.PoolManager().request('GET', 'http://www.gutenberg.org/files/' + index + '/' + index + '.txt').data, 'lxml').get_text()
 
-def numWords():
-	print(len(book.split()))
+def numWords(index):
+	print(len(getBook(index).split()))
 
-def numSentences():
-	print(len(book.split('.')))
+def numSentences(index):
+	print(len(getBook(index).split('.')))
 
-def numLines():
-	print(len(book.splitlines()))
+def numLines(index):
+	print(len(getBook(index).splitlines()))
 
-numWords()
-numSentences()
-numLines()
+def wps(index):
+	print(numWords(index)/numSentences(index))
+
+def populate():
+	for file in os.listdir('./../books'):
+		index = re.match('pg([0-9]*).rdf', file).group(1)
+		minWords(index)
+		numSentences(index)
+		numLines(index)
+		wps(index)

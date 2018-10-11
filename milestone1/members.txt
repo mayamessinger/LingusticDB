@@ -12,3 +12,5 @@ Maya Messinger
 * work on progress report
 
 Ryan Piersma
+* created project E/R diagram
+* created database schema

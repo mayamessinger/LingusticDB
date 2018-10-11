@@ -14,3 +14,6 @@ Maya Messinger
 Ryan Piersma
 * created project E/R diagram
 * created database schema
+* worked on web interface design
+* worked on progress report
+* worked on deciding what similarity metrics to use between books and authors

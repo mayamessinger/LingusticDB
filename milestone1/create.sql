@@ -35,3 +35,17 @@ BEGIN
 RETURN QUERY SELECT merged.name, CAST(AVG(merged.words_per_sentence) AS DECIMAL(10, 1)), CAST(AVG(merged.num_words) AS INTEGER), COUNT(merged.title) FROM (Books NATURAL JOIN Writes) AS merged WHERE merged.name = queried_author GROUP BY merged.name;
 END;
 $$ LANGUAGE plpgsql;
+
+CREATE FUNCTION GetBooksOfCloseLength(queried_length INTEGER)
+RETURNS TABLE(title VARCHAR(256), author VARCHAR(256), words_per_sentence INTEGER, num_words INTEGER) AS $$
+BEGIN
+RETURN QUERY SELECT merged.title, merged.name, merged.words_per_sentence, merged.num_words FROM (Writes NATURAL JOIN Books) AS merged WHERE (merged.num_words >= queried_length - 300 AND merged.num_words <= queried_length + 300);
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE FUNCTION GetSimilarBooks(queried_book VARCHAR(256))
+RETURNS TABLE(title VARCHAR(256)) AS $$
+BEGIN
+	RETURN QUERY SELECT c.title FROM (SELECT * FROM ((SELECT uid2 FROM IsSimilarBooks WHERE uid1 IN (SELECT uid FROM Books WHERE Books.title = 'Pride and Prejudice')) AS a JOIN Books ON Books.uid = a.uid2) AS b) AS c;
+END;
+$$ LANGUAGE plpgsql;

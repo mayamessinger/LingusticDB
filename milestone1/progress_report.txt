@@ -1,4 +1,5 @@
 * description of application
+	* LingusticDB will be a tool for comparing books in the Project Gutenberg library. Extracting metrics like sentence length, word count, and title similarities, it will suggest similar books and authors to a book or author queried. Also will try to analyze similarities between "bestselling" books to determine what writing styles are popular.
 * getting data
 	* downloaded rdf files of metadata for all books in Project Gutenberg (updated 8 Oct 18 - 58,057 entries)
 		* test queries w/ https://www.freeformatter.com/xpath-tester.html#ad-output

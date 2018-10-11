@@ -13,3 +13,18 @@ SELECT * FROM Books WHERE title LIKE '%Pride%';
    2 | Pride and Prejudice |                 16 |      3000
 (1 row)
 
+-- query by similar word length
+SELECT * FROM GetBooksOfCloseLength(3300);
+        title        |     author     | words_per_sentence | num_words 
+---------------------+----------------+--------------------+-----------
+ Alice in Wonderland | Carroll, Lewis |                 14 |      3500
+ Pride and Prejudice | Austen, Jane   |                 16 |      3000
+(2 rows)
+
+-- query by books similar to a book
+SELECT * FROM GetSimilarBooks('Pride and Prejudice');
+         title         
+-----------------------
+ Sense and Sensibility
+(1 row)
+

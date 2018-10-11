@@ -13,9 +13,12 @@
 		* assume header will always end with "*** START OF TH[IS/E] PROJECT GUTENBERG EBOOK ____ ***"
 		* assume book always ends with "*** END OF TH[IS/E] PROJECT GUTENBERG BOOK ____ ***"
 * E/R diagram
+	* Included in the file ERDiagramSchema.txt
 * database tables
 	* see create.sql and load.sql
 * description of web interface
 	* search bar allowing to index on author name, book title
 	* upon selecting a book, will show all info from Books table (title, author, words per sentence, num words, etc.)
 	* upon selecting an author, will show all of that author's books, as well as averaged stats of their books
+	* allows for a comparison between two books,  with a set of similarity metrics that user can select from given a list
+	* allows for a comparison between two authors, with a set of similarity metrics that user can select from given a list

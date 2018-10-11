@@ -1,12 +1,15 @@
--- psql dbname -af test-sample.sql > test-sample.out
+-- psql ling -af test-sample.sql > test-sample.out
+-- query by author name
 SELECT * FROM GetAuthorStats('Austen, Jane');
     author    | avg_words_per_sentence | avg_num_words | books_written 
 --------------+------------------------+---------------+---------------
  Austen, Jane |                   15.5 |          6500 |             2
 (1 row)
 
-SELECT * FROM Books WHERE title LIKE 'dragons';
- uid | title | author | words_per_sentence | num_words 
------+-------+--------+--------------------+-----------
-(0 rows)
+-- query by subject (tentative way)
+SELECT * FROM Books WHERE title LIKE '%Pride%';
+ uid |        title        | words_per_sentence | num_words 
+-----+---------------------+--------------------+-----------
+   2 | Pride and Prejudice |                 16 |      3000
+(1 row)
 

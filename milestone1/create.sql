@@ -3,20 +3,35 @@
 -- psql ling -af load.sql
 
 CREATE TABLE Authors
-(name VARCHAR(256) NOT NULL,
- -- birthdate INTEGER CHECK(birthdate < date_part('year', current_date)),
- PRIMARY KEY(name));
+(name VARCHAR(256) NOT NULL PRIMARY KEY,
+ birthdate INTEGER CHECK(birthdate < date_part('year', current_date)));
 
 CREATE TABLE Books
 (uid INTEGER NOT NULL PRIMARY KEY,
  title VARCHAR(256) NOT NULL,
- author VARCHAR(256) NOT NULL REFERENCES Authors(name),
  words_per_sentence INTEGER NOT NULL,
  num_words INTEGER NOT NULL);
+
+CREATE TABLE Bestsellers
+(uid INTEGER NOT NULL PRIMARY KEY REFERENCES Books(uid));
+
+ CREATE TABLE Writes
+ (uid INTEGER NOT NULL REFERENCES Books(uid) PRIMARY KEY,
+  name VARCHAR(256) NOT NULL REFERENCES Authors(name));
+
+ CREATE TABLE IsSimilarBooks
+ (uid1 INTEGER NOT NULL REFERENCES Books(uid),
+  uid2 INTEGER NOT NULL REFERENCES Books(uid),
+  PRIMARY KEY(uid1, uid2));
+
+ CREATE TABLE IsSimilarAuthors
+ (name1 VARCHAR(256) NOT NULL REFERENCES Authors(name),
+  name2 VARCHAR(256) NOT NULL REFERENCES Authors(name),
+  PRIMARY KEY(name1, name2));
 
 CREATE FUNCTION GetAuthorStats(queried_author VARCHAR(256))
 RETURNS TABLE(author VARCHAR(256), avg_words_per_sentence NUMERIC(10, 1), avg_num_words INTEGER, books_written BIGINT) AS $$
 BEGIN
-RETURN QUERY SELECT Books.author, CAST(AVG(Books.words_per_sentence) AS DECIMAL(10, 1)), CAST(AVG(Books.num_words) AS INTEGER), COUNT(Books.title) FROM Books WHERE Books.author = queried_author GROUP BY Books.author;
+RETURN QUERY SELECT merged.name, CAST(AVG(merged.words_per_sentence) AS DECIMAL(10, 1)), CAST(AVG(merged.num_words) AS INTEGER), COUNT(merged.title) FROM (Books NATURAL JOIN Writes) AS merged WHERE merged.name = queried_author GROUP BY merged.name;
 END;
 $$ LANGUAGE plpgsql;

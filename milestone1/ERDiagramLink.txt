@@ -1,0 +1,5 @@
+
+https://docs.google.com/document/d/1sOhbr1SjF2GXFWSaipQPg3AHjaiIKG5poBWzsoNij4w/edit?usp=sharing
+
+This link is to a Google Doc that contains the E/R diagram for 
+LinguisticDB

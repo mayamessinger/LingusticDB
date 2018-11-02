@@ -9,43 +9,66 @@ CREATE TABLE Authors
 CREATE TABLE Books
 (uid INTEGER NOT NULL PRIMARY KEY,
  title VARCHAR(256) NOT NULL,
- words_per_sentence INTEGER NOT NULL,
- num_words INTEGER NOT NULL);
-
-CREATE TABLE Bestsellers
-(uid INTEGER NOT NULL PRIMARY KEY REFERENCES Books(uid));
-
+ date_published VARCHAR(256) NOT NULL,
+ link_to_book VARCHAR(256) NOT NULL);
+					      					       
  CREATE TABLE Writes
  (uid INTEGER NOT NULL REFERENCES Books(uid) PRIMARY KEY,
   name VARCHAR(256) NOT NULL REFERENCES Authors(name));
+						
+CREATE TABLE BookWordAggregates
+(uid INTEGER NOT NULL REFERENCES Books(uid) PRIMARY KEY,
+ per_sentence REAL NOT NULL,
+ total_count REAL NOT NULL,
+ avg-word-length REAL NOT NULL);
 
- CREATE TABLE IsSimilarBooks
+CREATE TABLE CommonWords
+(uid INTEGER NOT NULL REFERENCES Books(uid),
+ word VARCHAR(256) NOT NULL,
+ frequency REAL NOT NULL,
+ PRIMARY KEY(uid, word));
+	     
+CREATE TABLE Downloads
+(uid INTEGER NOT NULL REFERENCES Books(uid) PRIMARY KEY,
+  download INTEGER NOT NULL);
+
+CREATE TABLE Sequences
+(uid INTEGER NOT NULL REFERENCES Books(uid),
+ word VARCHAR(256) NOT NULL REFERENCES CommonWords(word),
+ next_word VARCHAR(256) NOT NULL REFERENCES CommonWords(word),
+ times_appear REAL NOT NULL,
+ PRIMARY KEY(uid, word, next_word));
+
+CREATE TABLE User
+(username VARCHAR(256) NOT NULL PRIMARY KEY,
+email VARCHAR(256) NOT NULL,
+password BINARY(64) NOT NULL);
+
+CREATE TABLE UserRatings
+(username VARCHAR(256) NOT NULL REFERENCES User(username),
+ book_id INTEGER NOT NULL REFERENCES Books(uid),
+rating INTEGER NOT NULL,
+CHECK(rating > 0),
+CHECK (rating < 11),
+timestamp INTEGER NOT NULL,
+PRIMARY KEY(username, book_id));
+	     
+CREATE TABLE UserReview
+(username VARCHAR(256) NOT NULL ,
+book_id INTEGER NOT NULL REFERENCES Books(uid),
+review VARCHAR(256) NOT NULL,
+ timestamp INTEGER NOT NULL,
+PRIMARY KEY(username, book_id)););
+	     
+ CREATE TABLE CosineSimilarity
  (uid1 INTEGER NOT NULL REFERENCES Books(uid),
   uid2 INTEGER NOT NULL REFERENCES Books(uid),
+  cos_similarity INTEGER NOT NULL,
   PRIMARY KEY(uid1, uid2));
 
- CREATE TABLE IsSimilarAuthors
- (name1 VARCHAR(256) NOT NULL REFERENCES Authors(name),
-  name2 VARCHAR(256) NOT NULL REFERENCES Authors(name),
-  PRIMARY KEY(name1, name2));
-
-CREATE FUNCTION GetAuthorStats(queried_author VARCHAR(256))
-RETURNS TABLE(author VARCHAR(256), avg_words_per_sentence NUMERIC(10, 1), avg_num_words INTEGER, books_written BIGINT) AS $$
-BEGIN
-RETURN QUERY SELECT merged.name, CAST(AVG(merged.words_per_sentence) AS DECIMAL(10, 1)), CAST(AVG(merged.num_words) AS INTEGER), COUNT(merged.title) FROM (Books NATURAL JOIN Writes) AS merged WHERE merged.name = queried_author GROUP BY merged.name;
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE FUNCTION GetBooksOfCloseLength(queried_length INTEGER)
-RETURNS TABLE(title VARCHAR(256), author VARCHAR(256), words_per_sentence INTEGER, num_words INTEGER) AS $$
-BEGIN
-RETURN QUERY SELECT merged.title, merged.name, merged.words_per_sentence, merged.num_words FROM (Writes NATURAL JOIN Books) AS merged WHERE (merged.num_words >= queried_length - 300 AND merged.num_words <= queried_length + 300);
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE FUNCTION GetSimilarBooks(queried_book VARCHAR(256))
-RETURNS TABLE(title VARCHAR(256)) AS $$
-BEGIN
-	RETURN QUERY SELECT c.title FROM (SELECT * FROM ((SELECT uid2 FROM IsSimilarBooks WHERE uid1 IN (SELECT uid FROM Books WHERE Books.title = 'Pride and Prejudice')) AS a JOIN Books ON Books.uid = a.uid2) AS b) AS c;
-END;
-$$ LANGUAGE plpgsql;
+ CREATE TABLE AuthorSimilarity
+ (author1 VARCHAR(256) NOT NULL REFERENCES Authors(name),
+  author2 VARCHAR(256) NOT NULL REFERENCES Authors(name),
+  LDA_score INTEGER NOT NULL,
+  cos_similarity INTEGER NOT NULL,
+  PRIMARY KEY(author1, author2));

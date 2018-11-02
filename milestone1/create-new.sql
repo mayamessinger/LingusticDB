@@ -63,12 +63,12 @@ PRIMARY KEY(username, book_id)););
  CREATE TABLE CosineSimilarity
  (uid1 INTEGER NOT NULL REFERENCES Books(uid),
   uid2 INTEGER NOT NULL REFERENCES Books(uid),
-  cos_similarity INTEGER NOT NULL,
+  cos_similarity REAL NOT NULL,
   PRIMARY KEY(uid1, uid2));
 
  CREATE TABLE AuthorSimilarity
  (author1 VARCHAR(256) NOT NULL REFERENCES Authors(name),
   author2 VARCHAR(256) NOT NULL REFERENCES Authors(name),
-  LDA_score INTEGER NOT NULL,
-  cos_similarity INTEGER NOT NULL,
+  LDA_score REAL NOT NULL,
+  cos_similarity REAL NOT NULL,
   PRIMARY KEY(author1, author2));

@@ -32,7 +32,8 @@ export default {
   name: 'app',
   data () {
     return {
-      serverAddr: "https://35.227.92.33:3001",
+      // serverAddr: "https://35.227.92.33:3001",
+      serverAddr: "https://linguisticdb.ngrok.io",
       searchText: null,
       searchField: null,
       rowsReturned: []

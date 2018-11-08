@@ -32,7 +32,7 @@ export default {
   name: 'app',
   data () {
     return {
-      serverAddr: "",
+      serverAddr: "http://f67551bc.ngrok.io",
       searchText: null,
       searchField: null,
       rowsReturned: []

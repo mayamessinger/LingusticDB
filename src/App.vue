@@ -32,7 +32,7 @@ export default {
   name: 'app',
   data () {
     return {
-      serverAddr: "https://f67551bc.ngrok.io",
+      serverAddr: "https://35.227.92.33:3001",
       searchText: null,
       searchField: null,
       rowsReturned: []
@@ -43,9 +43,10 @@ export default {
       $.ajax({
         type: "POST",
         url: this.serverAddr,
-        data: {searchText: this.earchText, searchField: this.searchField},
+        data: {searchText: this.searchText, searchField: this.searchField},
         success: data => {
           this.rowsReturned = data;
+          console.log("request fulfilled");
         }
       })
     }

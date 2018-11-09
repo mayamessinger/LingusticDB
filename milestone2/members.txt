@@ -1,0 +1,24 @@
+John:
+Added to the metrics we will use
+Creating cosine similarity Python files to generate similarity measures for authors and books
+Generated ideas for additional text analysis and user functions
+Worked on this milestone update
+
+Ryan:
+Added to the metrics we will use
+Creating parts-of-speech analysis Python files 
+
+Alex:
+Created database and tables
+Figure out how to store user passwords securely with hash function
+Write SQL queries to explore the data
+Write views if needed
+
+Maya:
+Populated database by parsing text and xml files
+Wrote and deployed webapp server
+Running perpetually through ngrok and sytemctl
+Connected database and server
+Connected server to front-end
+Wrote front-end (super basic right now)
+https://mayamessinger.net/LinguisticDB

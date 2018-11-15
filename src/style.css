@@ -8,6 +8,13 @@
 
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+
+/*div, input, select, button, p, h4 {
+
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}*/
 #topbar  {
   width: 100%;
   background-color: #e8e8e8;
@@ -21,18 +28,18 @@
   display: inline-block;
   float: left;
 
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:5px;
-  margin-bottom:5px;
+  margin-left:6px;
+  margin-right:6px;
+  margin-top:6px;
+  margin-bottom:6px;
 }
 .topitemright  {
   display: inline-block;
   float: right;
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:5px;
-  margin-bottom:5px;
+  margin-left:6px;
+  margin-right:6px;
+  margin-top:6px;
+  margin-bottom:6px;
 
 }
 #title  {
@@ -46,21 +53,52 @@
   width: 80%;
   display: inline-block;
 }
-input {
-  margin:5px;
+
+#advancedsearch {
+  width: 80%;
+  display: inline-block;
+  margin-top:10px;
+  text-align:left;
+}
+
+#advancedsearch p {
+  width: 20%;
+  display: inline-block;
+  margin:0;
+}
+
+#advancedsearch input {
+  display: inline-block;
+  margin:0;
+  width: 77%;
+  height:25px;
+  box-shadow: 1px 1px #888888
+}
+
+#advancedsearch h4 {
+  margin:2px;
+}
+
+#advancedsearch div {
+  margin-top:15px;
+}
+
+#box {
+  margin:0;
   width: 80%;
   height:25px;
   box-shadow: 1px 1px #888888
 }
 .button .button2 {
   display: inline-block;
-  margin:5px;
-  height:25px
+  margin:6px;
+  height:27px
 
 }
 #select {
-  width: auto;
+  width: 19%;
   height:25px;
+  margin:0;
 }
 #results {
   text-align: left;
@@ -68,7 +106,4 @@ input {
   width: 80%;
   display: inline-block;
 
-}
-.result {
-  margin: 2%;
 }

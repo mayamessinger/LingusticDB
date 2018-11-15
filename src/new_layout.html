@@ -25,9 +25,29 @@
     </div>
     <div class="button">
       <button class="button2" type="button" v-on:click="search">Search</button>
-    <div class="button2">
+
       <button class="button2" type="button" v-on:click="search">Advanced Search&darr;</button>
+
     </div>
+    <div id="advancedsearch">
+      <h4>Advanced Search</h4>
+      <h4>Find books with...</h4>
+      <div id="searchelem">
+      <p>Title is exactly:</p>
+      <input id="search1" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Title contains:</p>
+      <input id="search2" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Author is exactly:</p>
+      <input id="search3" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Author contains:</p>
+      <input id="search4" v-model="searchText" type="text" size="100">
+      </div>
     </div>
      
     <div id="results">

@@ -45,9 +45,58 @@
       <input id="search3" v-model="searchText" type="text" size="100">
       </div>
       <div id="searchelem">
-      <p>Author contains:</p>
+      <p>Author name contains:</p>
       <input id="search4" v-model="searchText" type="text" size="100">
       </div>
+      <div id="searchelem">
+      <p>Author born between:</p>
+      <input class="double" id="search5" v-model="searchText" type="text" size="100">
+      <p>and</p>
+      <input class="double" id="search6" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Words per sentence between:</p>
+      <input class="double" id="search5" v-model="searchText" type="text" size="100">
+      <p>and</p>
+      <input class="double" id="search6" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Word count between:</p>
+      <input class="double" id="search5" v-model="searchText" type="text" size="100">
+      <p>and</p>
+      <input class="double" id="search6" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Avg word length between:</p>
+      <input class="double" id="search5" v-model="searchText" type="text" size="100">
+      <p>and</p>
+      <input class="double" id="search6" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Download count between:</p>
+      <input class="double" id="search5" v-model="searchText" type="text" size="100">
+      <p>and</p>
+      <input class="double" id="search6" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Avg rating between:</p>
+      <input class="double" id="search5" v-model="searchText" type="text" size="100">
+      <p>and</p>
+      <input class="double" id="search6" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Most popular word:</p>
+      <input id="search4" v-model="searchText" type="text" size="100">
+      </div>
+      <div id="searchelem">
+      <p>Similar to:</p>
+      <input id="search4" v-model="searchText" type="text" size="100">
+      </div>
+
+
+      <div id="search2" class="button">
+      <button class="button2" type="button" v-on:click="search">Search!</button>
+    </div>
     </div>
      
     <div id="results">

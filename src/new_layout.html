@@ -10,7 +10,7 @@
     <div class="topitemright"><a href="/">Sign in</a></div>
     <div class="topitemright"><a href="/">My profile</a></div>
     </div>
-    <div id="title">LinguisticDB</div>
+    <div id="title"><img id="logo" src="logo.png" alt="LinguisticDB Logo"></div>
     <div id="search">
       <input id="box" v-model="searchText" type="text" size="100">
       <select id="select" v-model="searchField">
@@ -30,71 +30,71 @@
 
     </div>
     <div id="advancedsearch">
-      <h4>Advanced Search</h4>
+      <h4 class="color">Advanced Search</h4>
       <h4>Find books with...</h4>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Title is exactly:</p>
-      <input id="search1" v-model="searchText" type="text" size="100">
+      <input class="search1" placeholder="eg. Wuthering Heights" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Title contains:</p>
-      <input id="search2" v-model="searchText" type="text" size="100">
+      <input id="search2" placeholder="eg. Wuthering" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Author is exactly:</p>
-      <input id="search3" v-model="searchText" type="text" size="100">
+      <input id="search3" placeholder="eg. Jane Austen" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Author name contains:</p>
-      <input id="search4" v-model="searchText" type="text" size="100">
+      <input id="search4" placeholder="eg. Austen" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Author born between:</p>
-      <input class="double" id="search5" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert lower bound as integer" id="search5" v-model="searchText" type="text" size="100">
       <p class="and">and</p>
-      <input class="double" id="search6" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert upper bound as integer" id="search6" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Words per sentence between:</p>
-      <input class="double" id="search7" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert lower bound as decimal" id="search7" v-model="searchText" type="text" size="100">
       <p class="and">and</p>
-      <input class="double" id="search8" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert upper bound as decimal" id="search8" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Word count between:</p>
-      <input class="double" id="search9" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert lower bound as integer" id="search9" v-model="searchText" type="text" size="100">
       <p class="and">and</p>
-      <input class="double" id="search10" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert upper bound as integer" id="search10" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Avg word length between:</p>
-      <input class="double" id="search11" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert lower bound as decimal" id="search11" v-model="searchText" type="text" size="100">
       <p class="and">and</p>
-      <input class="double" id="search12" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert upper bound as decimal" id="search12" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Download count between:</p>
-      <input class="double" id="search13" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert lower bound as integer" id="search13" v-model="searchText" type="text" size="100">
       <p class="and">and</p>
-      <input class="double" id="search14" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert upper bound as integer" id="search14" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
+      <div class="searchelem">
       <p>Avg rating between:</p>
-      <input class="double" id="search15" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert lower bound as decimal" id="search15" v-model="searchText" type="text" size="100">
       <p class="and">and</p>
-      <input class="double" id="search16" v-model="searchText" type="text" size="100">
+      <input class="double" placeholder="Insert upper bound as decimal" id="search16" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
-      <p>Most frequent word:</p>
-      <input id="search17" v-model="searchText" type="text" size="100">
+      <div class="searchelem">
+      <p>Frequent word:</p>
+      <input id="search17" placeholder="eg. Yorkshire" v-model="searchText" type="text" size="100">
       </div>
-      <div id="searchelem">
-      <p>Similar to book:</p>
-      <input id="search18" v-model="searchText" type="text" size="100">
+      <div class="searchelem">
+      <p>Similar to book (uid):</p>
+      <input id="search18" placeholder="eg. 1342" v-model="searchText" type="text" size="100">
       </div>
 
 
-      <div id="search2" class="button">
+      <div id="searchbutton2" class="button">
       <button class="button2" type="button" v-on:click="search">Search!</button>
     </div>
     </div>

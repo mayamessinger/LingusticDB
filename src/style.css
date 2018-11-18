@@ -17,7 +17,7 @@
 }*/
 #logo {
 
-  width:70%;
+  width:65%;
 }
 #topbar  {
   width: 100%;
@@ -96,7 +96,7 @@ h4 {
   margin:0;
   width: 67%;
   height:25px;
-  box-shadow: 1px 1px #888888
+  box-shadow: 1px 1px #5f0404
 }
 
 #advancedsearch input.double {
@@ -104,7 +104,7 @@ h4 {
   margin:0;
   width: 27%;
   height:25px;
-  box-shadow: 1px 1px #888888
+  box-shadow: 1px 1px #5f0404
 }
 
 #advancedsearch h4 {
@@ -119,13 +119,20 @@ h4 {
   margin:0;
   width: 80%;
   height:25px;
-  box-shadow: 1px 1px #888888;
+  box-shadow: 1px 1px #5f0404;
+
 }
 .button .button2 {
   display: inline-block;
   margin:6px;
   height:28px;
   text-align:center;
+  border-radius:4px;
+  font-size:15px;
+  background-color: #f4f4f4;
+  border-width: 1px;
+  border-style:solid;
+  border-color: #5f0404;
 
 }
 

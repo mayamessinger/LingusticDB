@@ -16,7 +16,7 @@
       <input id="box" v-model="searchText" type="text" size="100">
       <select id="select" v-model="searchField">
         <option disabled value="">Field</option>
-        <option>Title</option>
+        <option>Title</option>s
         <option>Author</option>
         <option>Year Released</option>
         <option>Word Count</option>
@@ -111,7 +111,7 @@
           <div v-if="book.name">by <a href="#">Charlotte Bronte</a></div>
           <div v-if="book.rating">Rating: 8.1/10</div>
           <div v-if="book.total_count">Word count: 27008</div>
-          <div v-if="book.link">Gutenberg link: <a href="http://www.gutenberg.org/ebooks/1260">http://www.gutenberg.org/ebooks/1260</a></div>
+          <div v-if="book.link">Project Gutenberg link: <a href="http://www.gutenberg.org/ebooks/1260">http://www.gutenberg.org/ebooks/1260</a></div>
       </div>
     </div>
   </div>

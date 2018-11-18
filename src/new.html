@@ -5,10 +5,11 @@
   
   <div id="app">
     <div id="topbar">
-      <div class="topitem"><a href="/">About</a></div>
-    <div class="topitem"><a href="/">Statistics</a></div>
-    <div class="topitemright"><a href="/">Sign in</a></div>
-    <div class="topitemright"><a href="/">My profile</a></div>
+    <div class="topitem"><a href="about.html">About</a></div>
+    <div class="topitem"><a href="stats.html">Statistics</a></div>
+    <div class="topitem"><a href="new.html">Search</a></div>
+    <div class="topitemright"><a href="login.html">Sign in</a></div>
+    <div class="topitemright"><a href="profile.html">My profile</a></div>
     </div>
     <div id="title"><img id="logo" src="logo.png" alt="LinguisticDB Logo"></div>
     <div id="search">
@@ -106,10 +107,11 @@
     <div id="results">
       <h5>27 results</h5>
       <div v-for="book in rowsReturned" class="result">
-          <div><a href="/">Price and Prejudice</a></div>
-          <div v-if="book.name">by <a href="/">Jane Austen</a></div>
-          <div v-if="book.total_count">Rating: 8.1/10</div>
-          <div v-if="book.per_sentence">Word count: 27008</div>
+          <div><a class="booktitle" href="book.html">Jane Eyre</a></div>
+          <div v-if="book.name">by <a href="#">Charlotte Bronte</a></div>
+          <div v-if="book.rating">Rating: 8.1/10</div>
+          <div v-if="book.total_count">Word count: 27008</div>
+          <div v-if="book.link">Gutenberg link: <a href="http://www.gutenberg.org/ebooks/1260">http://www.gutenberg.org/ebooks/1260</a></div>
       </div>
     </div>
   </div>

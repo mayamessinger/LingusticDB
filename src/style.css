@@ -151,6 +151,9 @@ h4 {
   display: inline-block;
 
 }
+a.booktitle {
+  font-weight: bold;
+}
 #results a {
   color: #5f0404;
 

@@ -2,16 +2,18 @@
 	<div id="topbar">
 	    <div class="topitem"><a href="/src/about.html">About</a></div>
 	    <div class="topitem"><a href="/src/stats.html">Statistics</a></div>
-	    <div class="topitem"><a href="/src/new.html">Search</a></div>
-	    <div class="topitemright"><v-on:click="$emit('login')">Sign in</a></div>
+	    <div class="topitem"><a href="#">Search</a></div>
+	    <div class="topitemright"><a v-on:click="$emit('login')" href="/src/login.html">Sign in</a></div>
 	    <div class="topitemright"><a href="/src/profile.html">My profile</a></div>
 	</div>
 </template>
 
 <script>
 export default {
-	name: "topbar",
+	name: "Topbar",
 	data () {
+    return {
+    }
 	}
 }
 </script>

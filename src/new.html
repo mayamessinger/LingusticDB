@@ -94,8 +94,11 @@
       <input id="search18" placeholder="eg. Heathcliff, Earnshaw" v-model="searchText" type="text" size="100">
       </div>
       <div class="searchelem">
-      <p>Similar to book (uid):</p>
-      <input id="search19" placeholder="eg. 1342" v-model="searchText" type="text" size="100">
+      <div class="searchelem">
+      <p>Similar to book:</p>
+      <input class="double" placeholder="Insert book id" id="search19" v-model="searchText" type="text" size="100">
+      <p class="and">with rank ></p>
+      <input class="double" placeholder="Insert bound here as int" id="search20" v-model="searchText" type="text" size="100">
       </div>
 
 

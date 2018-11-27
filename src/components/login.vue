@@ -26,11 +26,13 @@
     </div>
 
     <hr>
-    <div class="title"><img class="logo" src="/src/assets/logo.png" alt="LinguisticDB Logo"></div>
+    <div class="title"><img class="logo" src="./../assets/logo.png" alt="LinguisticDB Logo"></div>
 	</div>
 </template>
 
 <script>
+import logo from "./../assets/logo.png";
+
 export default {
 	name: "Login",
 	data () {
@@ -50,14 +52,12 @@ export default {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 .logo {
-
   width:40%;
 }
 .content {
   margin-top:30px;
   text-align:center;
   width:100%;
-
 }
 .content h1 {
   color: #5f0404;

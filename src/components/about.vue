@@ -18,11 +18,13 @@
         </div>
     </div>
     <hr>
-    <div class="title"><img class="logo" src="/src/assets/logo.png" alt="LinguisticDB Logo"></div>
+    <div class="title"><img class="logo" src="./../assets/logo.png" alt="LinguisticDB Logo"></div>
   </div>
 </template>
 
 <script>
+import logo from "./../assets/logo.png";
+
 export default {
 	name: "About",
 	data () {
@@ -41,26 +43,13 @@ export default {
   margin-top:40px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
- 
-/*div, input, select, button, p, h4 {
-
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
-}*/
 .logo {
-
   width:40%;
 }
 .content {
   margin-top:30px;
   text-align:center;
   width:100%;
-
-}
-table {
-    border-collapse: collapse;
-    margin:5px;
 }
 .content h1 {
   color: #5f0404;

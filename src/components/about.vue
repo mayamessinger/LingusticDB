@@ -9,7 +9,7 @@
             <p>We are independent from the Project Gutenberg.</p>
         </div>
         <div class="right">
-            <h1>The Team.</h1>
+            <h1>The Team</h1>
             <hr>
             <p>Maya Messinger</p>
             <p>Alex Angel</p>

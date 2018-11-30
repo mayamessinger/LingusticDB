@@ -5,9 +5,8 @@
     <about v-if="view==='about'"></about>
     <statistics v-if="view==='statistics'"></statistics>
     <search v-if="view==='search'" :rowsReturned="rowsReturned" @search="search(...arguments)"></search>
-    <profile v-if="view==='profile'" @getBook="getBook(...arguments)"></profile>
+    <profile v-if="view==='profile'"></profile>
     <login v-if="view==='login'"></login>
-    <book v-if="view==='book'"></book>
     </div>
   </div>
 </template>
@@ -21,7 +20,6 @@ import Statistics from "./components/statistics.vue";
 import Search from "./components/search.vue";
 import Profile from "./components/profile.vue";
 import Login from "./components/login.vue";
-import Book from "./components/book.vue";
 
 export default {
   name: 'app',
@@ -39,8 +37,7 @@ export default {
     About,
     Search,
     Profile,
-    Login,
-    Book
+    Login
   },
   methods: {
     toggleView(view)  {
@@ -85,9 +82,6 @@ export default {
           console.log("request fulfilled");
         }
       })
-    },
-    getBook(title)  {
-      this.view = "book";
     }
   }
 }

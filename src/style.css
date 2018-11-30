@@ -1,0 +1,164 @@
+#app {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+
+  margin-top:40px;
+
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+ 
+/*div, input, select, button, p, h4 {
+
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}*/
+#logo {
+
+  width:65%;
+}
+#topbar  {
+  width: 100%;
+  background-color: #5f0404;
+
+  position: fixed;
+    top: 0;
+    left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+#topbar  a { 
+  color:white;
+  text-decoration: none;
+}
+#topbar  a:hover { 
+  color:white;
+  text-decoration: underline;
+}
+.topitem  {
+  display: inline-block;
+  float: left;
+
+  margin-left:8px;
+  margin-right:8px;
+  margin-top:8px;
+  margin-bottom:8px;
+}
+.topitemright  {
+  display: inline-block;
+  float: right;
+  margin-left:6px;
+  margin-right:6px;
+  margin-top:6px;
+  margin-bottom:6px;
+
+}
+#title  {
+  font-size: 3em;
+  padding-bottom: 2%;
+  width: 80%;
+  display: inline-block;
+
+}
+#search {
+  width: 80%;
+  display: inline-block;
+}
+
+#advancedsearch {
+  width: 80%;
+  display: inline-block;
+  margin-top:10px;
+  text-align:left;
+}
+
+#advancedsearch p {
+  width: 30%;
+  display: inline-block;
+  margin:0;
+  border:0;
+}
+
+h4 {
+  color: #5f0404;
+}
+
+#advancedsearch .and {
+  width: 11.5%;
+  display: inline-block;
+  margin:0;
+  border:0;
+  text-align:center;
+}
+
+#advancedsearch input {
+  display: inline-block;
+  margin:0;
+  width: 67%;
+  height:25px;
+  box-shadow: 1px 1px #5f0404
+}
+
+#advancedsearch input.double {
+  display: inline-block;
+  margin:0;
+  width: 27%;
+  height:25px;
+  box-shadow: 1px 1px #5f0404
+}
+
+#advancedsearch h4 {
+  margin:2px;
+}
+
+#advancedsearch div {
+  margin-top:15px;
+}
+
+#box {
+  margin:0;
+  width: 80%;
+  height:25px;
+  box-shadow: 1px 1px #5f0404;
+
+}
+.button .button2 {
+  display: inline-block;
+  margin:6px;
+  height:28px;
+  text-align:center;
+  border-radius:4px;
+  font-size:15px;
+  background-color: #f4f4f4;
+  border-width: 1px;
+  border-style:solid;
+  border-color: #5f0404;
+
+}
+
+#searchbutton2 {
+  text-align:center;
+}
+#select {
+  width: 19%;
+  height:25px;
+  margin:0;
+}
+#results {
+  text-align: left;
+  width: 80%;
+  display: inline-block;
+
+}
+
+#results div {
+  margin-top:2px;
+}
+a.booktitle {
+  font-weight: bold;
+}
+#results a {
+  color: #5f0404;
+}

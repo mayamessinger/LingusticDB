@@ -156,6 +156,7 @@ h4 {
   border:0;
   text-align:center;
 }
+
 #advancedsearch input {
   display: inline-block;
   margin:0;
@@ -163,6 +164,7 @@ h4 {
   height:25px;
   box-shadow: 1px 1px #5f0404
 }
+
 #advancedsearch input.double {
   display: inline-block;
   margin:0;
@@ -170,17 +172,21 @@ h4 {
   height:25px;
   box-shadow: 1px 1px #5f0404
 }
+
 #advancedsearch h4 {
   margin:2px;
 }
+
 #advancedsearch div {
   margin-top:15px;
 }
+
 #box {
   margin:0;
   width: 80%;
   height:25px;
   box-shadow: 1px 1px #5f0404;
+
 }
 .button .button2 {
   display: inline-block;
@@ -193,6 +199,7 @@ h4 {
   border-width: 1px;
   border-style:solid;
   border-color: #5f0404;
+
 }
 #searchbutton2 {
   text-align:center;
@@ -207,11 +214,13 @@ h4 {
   margin: 5%;
   width: 80%;
   display: inline-block;
+
 }
 a.booktitle {
   font-weight: bold;
 }
 #results a {
   color: #5f0404;
+
 }
 </style>

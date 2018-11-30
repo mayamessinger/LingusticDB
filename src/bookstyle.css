@@ -1,41 +1,6 @@
-<template>
-	<div id="profile">
-		<div class="content">
-	    <div class="left">
-		    <h1>My profile</h1>
-		    <hr>
-		    <p>My username: alexangel</p>
-		    <p>My email: alexangel@email.com</p>
-	    </div>
 
-	    <div class="right">
-		    <h1>Books I Like</h1>
-		    <hr>
-		    <p><a href="book.html">Jane Eyre</a></p>
-		    <p><a href="">Book 2</a></p>
-		    <p><a href="">Book 3</a></p>
-		    <p><a href="">Book 4</a></p>
-		    <p><a href="">Book 5</a></p>
-	    </div>
-    </div>
 
-    <hr>
-    <div class="title"><img class="logo" src="/src/assets/logo.png" alt="LinguisticDB Logo"></div>
-	</div>
-</template>
-
-<script>
-export default {
-	name: "Profile",
-	data () {
-		return {
-    }
-	}
-}
-</script>
-
-<style>
-#profile {
+#app {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -50,20 +15,22 @@ export default {
   border-color: black;
   border-style: solid;
 }*/
-.logo {
+#logo {
 
   width:40%;
 }
-.content {
+#content {
   margin-top:30px;
   text-align:center;
   width:100%;
 
 }
+
 table {
     border-collapse: collapse;
     margin:5px;
 }
+
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
@@ -77,27 +44,29 @@ td, th {
 #star2,#star3,#star4,#star5,#star6,#star7,#star8,#star9,#star10 {
   width: 20px;
 }
+
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-.content h1 {
+
+#content h1 {
   color: #5f0404;
   font-size: 25px;
   margin-bottom: 5px;
   margin-left:9px;
 }
-.content p {
+#content p {
   margin:9px;
 }
-.content h4 {
+#content h4 {
   color: #5f0404;
   margin:9px;
   font-size: 15px;
 }
-.content a {
+#content a {
   color: #5f0404;
 }
-.left, .right {
+#left, #right {
   width:47%;
   margin-left:auto;
   margin-right:auto;
@@ -105,16 +74,49 @@ tr:nth-child(even) {
   display:inline-block;
   vertical-align: top;
 }
-.title  {
+#topbar  {
+  width: 100%;
+  background-color: #5f0404;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+#topbar  a { 
+  color:white;
+  text-decoration: none;
+}
+#topbar  a:hover { 
+  color:white;
+  text-decoration: underline;
+}
+.topitem  {
+  display: inline-block;
+  float: left;
+
+  margin-left:8px;
+  margin-right:8px;
+  margin-top:8px;
+  margin-bottom:8px;
+}
+.topitemright  {
+  display: inline-block;
+  float: right;
+  margin-left:6px;
+  margin-right:6px;
+  margin-top:6px;
+  margin-bottom:6px;
+
+}
+#title  {
   font-size: 3em;
   padding-bottom: 2%;
   width: 80%;
   display: inline-block;
   text-align:center;
-}
+
 textarea {
   margin-left:5px;
   display:inline-block;
 }
-</style>
-</style>

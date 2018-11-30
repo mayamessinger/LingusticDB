@@ -18,7 +18,7 @@
         </div>
     </div>
     <hr>
-    <div class="title"><img class="logo" src="../assets/logo.png" alt="LinguisticDB Logo"></div>
+    <div class="title"><img class="logo" src="./../assets/logo.png" alt="LinguisticDB Logo"></div>
   </div>
 </template>
 

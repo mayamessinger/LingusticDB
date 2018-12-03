@@ -39,7 +39,6 @@ export default {
 .topitem  {
   display: inline-block;
   float: left;
-
   margin-left:8px;
   margin-right:8px;
   margin-top:8px;

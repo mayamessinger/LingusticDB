@@ -1,4 +1,5 @@
 <head>
+<meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="bookstyle.css">
 </head>
 <html>
@@ -18,19 +19,60 @@
     
     <hr>
     <h4>Book uid: 1260</h4>
-    <p>by <a href="">Charlotte Brontë</a></p>
-    <p>Born: 1900</p>
-    <p>Year released: 1900</p>
-    <p>Word count: 187,150</p>
-    <p>Avg sentence length: 17.0147</p>
-    <p>Avg word length: 4.5</p>
-    <p>Top 10 most popular words:</p>
-    <table>
-    <tr>
-    <th>Word</th>
-    <th>Frequency</th>
+    <p style="font-size:120%;">by <a href="">Charlotte Brontë</a></p>
+    <p>Author birthyear: <b>1900</b></p>
+    <p>Year released: <b>1900</b></p>
+    <p>Word count: <b>187,150</b></p>
+    <p>Avg sentence length: <b>17.0147</b></p>
+    <p>Avg word length: <b>4.5</b></p>
+    <p>Avg user rating: <b>7.9/10</b></p>
+    <p>Ratings count: <b>47</b></p>
+    <p style="display:inline-block;">My rating:</p>
+    <!-- <img id="star1" src="star_full.png" alt="Star">
+    <img id="star2" src="star_full.png" alt="Star">
+    <img id="star3" src="star_full.png" alt="Star">
+    <img id="star4" src="star.png" alt="Star">
+    <img id="star5" src="star.png" alt="Star">
+    <img id="star6" src="star.png" alt="Star">
+    <img id="star7" src="star.png" alt="Star">
+    <img id="star8" src="star.png" alt="Star">
+    <img id="star9" src="star.png" alt="Star">
+    <img id="star10" src="star.png" alt="Star"> -->
+    <input style="
+    width: 30px;
+    border-width: 1px;
+    border-style:solid;
+    border-color: #5f0404;
+    height:24px;
+    border-radius:4px;
+    font-size:15px;
+    display: inline-block;" />
+    <button style="font-weight: bold; 
+    display: inline-block;
+
+    height:24px;
+    text-align:center;
+    border-radius:4px;
+    font-size:15px;
+    background-color: #f4f4f4;
+    border-width: 1px;
+    border-style:solid;
+    border-color: #5f0404;" 
+    class="rating_button">Rate this book</button>
+
+    <div class="tables" style="margin-left:auto;
+    margin-right:auto;">
+    <div class="words" style="display: inline-block;
+    margin-right: 10px;
+    text-align:left;
+    margin-right: 50px">
+    <p><b>Top 5 most popular words:</b></p>
+    <table style="display: inline-block;">
+    <tr style="">
+    <th style="color: #5f0404;">Word</th>
+    <th style="color: #5f0404;">Frequency</th>
     </tr>
-    <tr>
+    <tr style="">
     <td>Darcy</td>
     <td>1,547</td>
     </tr>
@@ -39,16 +81,26 @@
     <td>1,378</td>
     </tr>
     <tr>
-    <td>other</td>
+    <td>other1</td>
+    <td>1,198</td>
+    </tr>
+    <tr>
+    <td>other2</td>
+    <td>1,198</td>
+    </tr>
+    <tr>
+    <td>other3</td>
     <td>1,198</td>
     </tr>
     </table>
-    <p>Top 10 most popular sequences:</p>
-    <table>
+    </div>
+    <div class="sequences" style="display: inline-block;">
+    <p><b>Top 5 most popular sequences:</b></p>
+    <table style="display: inline-block;">
     <tr>
-    <th>Word</th>
-    <th>Next word</th>
-    <th>Frequency</th>
+    <th style="color: #5f0404;">Word</th>
+    <th style="color: #5f0404;" >Next word</th>
+    <th style="color: #5f0404;">Frequency</th>
     </tr>
     <tr>
     <td>Mr.</td>
@@ -65,26 +117,26 @@
     <td>love</td>
     <td>698</td>
     </tr>
-    </table>
-    <p>Avg user rating: 7.9/10</p>
-    <p>Num ratings: 47</p>
-    <p>Rate this book:</p>
-    <img id="star1" src="star_full.png" alt="Star">
-    <img id="star2" src="star_full.png" alt="Star">
-    <img id="star3" src="star_full.png" alt="Star">
-    <img id="star4" src="star.png" alt="Star">
-    <img id="star5" src="star.png" alt="Star">
-    <img id="star6" src="star.png" alt="Star">
-    <img id="star7" src="star.png" alt="Star">
-    <img id="star8" src="star.png" alt="Star">
-    <img id="star9" src="star.png" alt="Star">
-    <img id="star10" src="star.png" alt="Star">
-    <p>Comments:</p>
-    <table>
     <tr>
-    <th>Username</th>
-    <th>Time</th>
-    <th>Comment</th>
+    <td>this</td>
+    <td>one</td>
+    <td>698</td>
+    </tr>
+    <tr>
+    <td>this</td>
+    <td>two</td>
+    <td>698</td>
+    </tr>
+    </table>
+    </div>
+    </div>
+    
+    <p>Comments:</p>
+    <table class="comments" style="width: 90%;">
+    <tr>
+    <th style="color: #5f0404;">Username</th>
+    <th style="color: #5f0404;">Time</th>
+    <th style="color: #5f0404;">Comment</th>
     </tr>
     <tr>
     <td>alexangel</td>
@@ -98,28 +150,43 @@
     </tr>
     </table>
     <p>Post a comment:</p>
-    <textarea id="comment" name="comment" cols="40" rows="5">
+    <div class="commentarea"
+    style="display:inline-block; text-align:center;
+    width: 70%; margin:5px;">
+
+    <textarea style ="width:100%" id="comment" name="comment" cols="40" rows="5">
     </textarea>
-    <div>
-    <button>Send comment</button>
+    <button class="publish" style="font-weight: bold; 
+    height: 20px; 
+    display:block;
+    margin:auto;
+    height:24px;
+    text-align:center;
+    border-radius:4px;
+    font-size:15px;
+    background-color: #f4f4f4;
+    border-width: 1px;
+    border-style:solid;
+    border-color: #5f0404;" >Publish comment</button>
+
     </div>
     </div>
 
     <div id="right">
-    <h1>Similar books</h1>
+    <h1>Top 5 similar books</h1>
     <hr>
-    <p>Book 1</p>
-    <p>Book 2</p>
-    <p>Book 3</p>
-    <p>Book 4</p>
-    <p>Book 5</p>
-    <h1>Similar authors</h1>
+    <p style="font-size: 110%;"><a class="booktitle" href="">Jane Eyre</a></p>
+    <p style="font-size: 110%;"><a class="booktitle" href="">Pride and Prejudice</a></p>
+    <p style="font-size: 110%;"><a class="booktitle" href="">Huckleberry Finn</a></p>
+    <p style="font-size: 110%;"><a class="booktitle" href="">Sense and Sensibility</a></p>
+    <p style="font-size: 110%;"><a class="booktitle" href="">The Bible</a></p>
+    <h1>Top 5 similar authors</h1>
     <hr>
-    <p>Author 1</p>
-    <p>Author 2</p>
-    <p>Author 3</p>
-    <p>Author 4</p>
-    <p>Author 5</p>
+    <p style="font-size: 110%;"><a class="booktitle" href="">Author 1</a></p>
+    <p style="font-size: 110%;"><a class="booktitle" href="">Author 2</a></p>
+    <p style="font-size: 110%;"><a class="booktitle" href="">Author 3</a></p>
+    <p style="font-size: 110%;"><a class="booktitle" href="">Author 4</a></p>
+    <p style="font-size: 110%;"><a class="booktitle" href="">Author 5</a></p>
     </div>
     </div>
 

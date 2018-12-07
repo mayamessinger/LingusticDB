@@ -55,8 +55,11 @@ tr:nth-child(even) {
   margin-bottom: 5px;
   margin-left:9px;
 }
+b {
+  color: #5f0404;
+}
 #content p {
-  margin:9px;
+  margin:4px;
 }
 #content h4 {
   color: #5f0404;
@@ -120,3 +123,4 @@ textarea {
   margin-left:5px;
   display:inline-block;
 }
+

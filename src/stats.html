@@ -12,23 +12,568 @@
     <div class="topitemright"><a href="profile.html">My profile</a></div>
     </div>
 
-    <div id="content">
-    <div id="left">
-    <h1>General Statistics</h1>
-    
-    <hr>
-    <p>Author count: 13,000</p>
-    <p>Avg birthdate: 1900</p>
-    <p>Min birthdate: 1900</p>
-    <p>Max birthdate: 1900</p>
-    <p>etc.</p>
+    <div id="content" style="text-align:left; margin: auto;
+    margin-top:60px;
+    width: 75%;">
+
+        <h1>General Statistics</h1>
+        <hr>
+        
+        
+        <p>Book count and information about Gutenberg publication year</p>
+        <table style="display:inline-block;">
+        <tr>
+        <th style="color: #5f0404;">count</th>
+        <th style="color: #5f0404;">min</th>
+        <th style="color: #5f0404;">max</th>
+        </tr>
+        <tr>
+        <td>36886</td>
+        <td>1972-12-01</td>
+        <td>2018-10-30</td>
+        </tr>
+        </table>
+
+        <p>Author count and information about birthdates</p>
+        <table style="display:inline-block;">
+        <tr>
+        <th style="color: #5f0404;">count</th>
+        <th style="color: #5f0404;">min</th>
+        <th style="color: #5f0404;">percentile_05</th>
+        <th style="color: #5f0404;">percentile_25</th>
+        <th style="color: #5f0404;">median</th>
+        <th style="color: #5f0404;">avg</th>
+        <th style="color: #5f0404;">percentile_75</th>
+        <th style="color: #5f0404;">percentile_95</th>
+        <th style="color: #5f0404;">max</th>
+        </tr>
+        <tr>
+        <td>12419</td>
+        <td>-750</td>
+        <td>1738</td>
+        <td>1827</td>
+        <td>1855</td>
+        <td>1831.7</td>
+        <td>1872</td>
+        <td>1896</td>
+        <td>1981</td>
+        </tr>
+        </table>
+
+        <p>Information about words per sentence in books</p>
+        <table style="display:inline-block;">
+        <tr>
+        <th style="color: #5f0404;">count</th>
+        <th style="color: #5f0404;">min</th>
+        <th style="color: #5f0404;">percentile_05</th>
+        <th style="color: #5f0404;">percentile_25</th>
+        <th style="color: #5f0404;">median</th>
+        <th style="color: #5f0404;">avg</th>
+        <th style="color: #5f0404;">percentile_75</th>
+        <th style="color: #5f0404;">percentile_95</th>
+        <th style="color: #5f0404;">max</th>
+        </tr>
+        <tr>
+        <td>36441</td>
+        <td>5.0</td>
+        <td>9.8</td>
+        <td>13.5</td>
+        <td>16.7</td>
+        <td>17.2</td>
+        <td>20.5</td>
+        <td>26.3</td>
+        <td>35.0</td>
+        </tr>
+        </table>
+
+        <p>Information about average word length in books</p>
+        <table style="display:inline-block;">
+        <tr>
+        <th style="color: #5f0404;">count</th>
+        <th style="color: #5f0404;">min</th>
+        <th style="color: #5f0404;">percentile_05</th>
+        <th style="color: #5f0404;">percentile_25</th>
+        <th style="color: #5f0404;">median</th>
+        <th style="color: #5f0404;">avg</th>
+        <th style="color: #5f0404;">percentile_75</th>
+        <th style="color: #5f0404;">percentile_95</th>
+        <th style="color: #5f0404;">max</th>
+        </tr>
+        <tr>
+        <td>36441</td>
+        <td>4.0</td>
+        <td>4.4</td>
+        <td>4.6</td>
+        <td>4.7</td>
+        <td>4.7</td>
+        <td>4.9</td>
+        <td>5.1</td>
+        <td>6.8</td>
+        </tr>
+        </table>
+        <div>
+        <p>Information about total word count in books</p>
+        <table style="display:inline-block;"
+        <tr>
+        <th style="color: #5f0404;">count</th>
+        <th style="color: #5f0404;">min</th>
+        <th style="color: #5f0404;">percentile_05</th>
+        <th style="color: #5f0404;">percentile_25</th>
+        <th style="color: #5f0404;">median</th>
+        <th style="color: #5f0404;">avg</th>
+        <th style="color: #5f0404;">percentile_75</th>
+        <th style="color: #5f0404;">percentile_95</th>
+        <th style="color: #5f0404;">max</th>
+        </tr>
+        <tr>
+        <td>36441</td>
+        <td>280</td>
+        <td>5738</td>
+        <td>20246</td>
+        <td>49841</td>
+        <td>63972.8</td>
+        <td>85803</td>
+        <td>169387</td>
+        <td>2.8e+06</td>
+        </tr>
+        </table>
     </div>
 
-    <div id="right">
+        <div style="display:inline-block;">
+        <p>Most popular words in database</p>
+        <table style="display:inline-block;"
+        <tr>
+        <th style="color: #5f0404;">rank</th>
+        <th style="color: #5f0404;">count</th>
+        <th style="color: #5f0404;">word</th>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>12419</td>
+        <td>hello</td>
+        </tr>
+        <tr>
+        <td>2</td>
+        <td>12419</td>
+        <td>bye</td>
+        </tr>
+        <tr>
+        <td>3</td>
+        <td>12419</td>
+        <td>this</td>
+        </tr>
+        <tr>
+        <td>4</td>
+        <td>12419</td>
+        <td>this</td>
+        </tr>
+        <tr>
+        <td>5</td>
+        <td>12419</td>
+        <td>this</td>
+        </tr>
+        <td>6</td>
+        <td>12419</td>
+        <td>this</td>
+        </tr>
+        <td>7</td>
+        <td>12419</td>
+        <td>this</td>
+        </tr>
+        <td>8</td>
+        <td>12419</td>
+        <td>this</td>
+        </tr>
+        <td>9</td>
+        <td>12419</td>
+        <td>this</td>
+        </tr>
+        <td>10</td>
+        <td>12419</td>
+        <td>this</td>
+        </tr>
+        </table>
+        </div>
+
+        <div style="display: inline-block;">
+        <p>Most similar authors by cosine similarity</p>
+        <table style="display:inline-block;"
+        <tr>
+        <th style="color: #5f0404;">rank</th>
+        <th style="color: #5f0404;">author 1</th>
+        <th style="color: #5f0404;">author 2</th>
+        <th style="color: #5f0404;">similarity rating</th>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>
+        <tr>
+        <td>2</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>
+        <tr>
+        <td>3</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>
+        <tr>
+        <td>4</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>
+        <tr>
+        <td>5</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>
+        <tr>
+        <td>6</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>
+        <tr>
+        <td>7</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>
+        <tr>
+        <td>8</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>
+        <tr>
+        <td>9</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>
+        <tr>
+        <td>10</td>
+        <td>author 1</td>
+        <td>author 2</td>
+        <td>9.98</td>
+        </tr>        
+        </table>
+        </div>
+
+        <div style="display: inline-block;">
+        <p>Most similar books by cosine similarity</p>
+        <table style="display:inline-block;"
+        <tr>
+        <th style="color: #5f0404;">rank</th>
+        <th style="color: #5f0404;">title</th>
+        <th style="color: #5f0404;">similarity rating</th>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>
+        <tr>
+        <td>2</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>
+        <tr>
+        <td>3</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>   
+        <tr>
+        <td>4</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>
+        <tr>
+        <td>5</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>
+        <tr>
+        <td>6</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>
+        <tr>
+        <td>7</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>
+        <tr>
+        <td>8</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>
+        <tr>
+        <td>9</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>
+        <tr>
+        <td>10</td>
+        <td>book 1</td>
+        <td>7.72</td>
+        </tr>
+        </table>
+        </div>
+
+        <div style="display: inline-block;">
+        <p>Most downloaded books</p>
+        <table style="display:inline-block;"
+        <tr>
+        <th style="color: #5f0404;">rank</th>
+        <th style="color: #5f0404;">title</th>
+        <th style="color: #5f0404;">download count</th>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr>
+        <tr>
+        <td>2</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr><tr>
+        <td>3</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr><tr>
+        <td>4</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr><tr>
+        <td>5</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr><tr>
+        <td>6</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr><tr>
+        <td>7</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr><tr>
+        <td>8</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr><tr>
+        <td>9</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr><tr>
+        <td>10</td>
+        <td>book 1</td>
+        <td>24015</td>
+        </tr>
+        </table>
+        </div>
+
+        <div style="display: inline-block;">
+        <p>Most popular sequences</p>
+        <table style="display:inline-block;"
+        <tr>
+        <th style="color: #5f0404;">rank</th>
+        <th style="color: #5f0404;">word</th>
+        <th style="color: #5f0404;">next word</th>
+        <th style="color: #5f0404;">count</th>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        <tr>
+        <td>2</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        <td>3</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        <td>4</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        <td>5</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        <td>6</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        <td>7</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        <td>8</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        <td>9</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        <td>10</td>
+        <td>this</td>
+        <td>was</td>
+        <td>24015</td>
+        </tr>
+        </table>
+        </div>
+
+        <div style="display: inline-block;">
+        <p>Best rated books</p>
+        <table style="display:inline-block;"
+        <tr>
+        <th style="color: #5f0404;">rank</th>
+        <th style="color: #5f0404;">book</th>
+        <th style="color: #5f0404;">avg user rating</th>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr>
+        <tr>
+        <td>2</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr><tr>
+        <td>3</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr><tr>
+        <td>4</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr><tr>
+        <td>5</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr><tr>
+        <td>6</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr><tr>
+        <td>7</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr><tr>
+        <td>8</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr><tr>
+        <td>9</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr><tr>
+        <td>10</td>
+        <td>Pride and Prejudice</td>
+        <td>7.3/10</td>
+        </tr>
+        </table>
+        </div>
+
+        <div style="display: inline-block;">
+        <p>Books with the most ratings</p>
+        <table style="display:inline-block;"
+        <tr>
+        <th style="color: #5f0404;">rank</th>
+        <th style="color: #5f0404;">book</th>
+        <th style="color: #5f0404;">rating count</th>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr>
+        <tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr><tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr><tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr><tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr><tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr><tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr><tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr><tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr><tr>
+        <td>1</td>
+        <td>Pride and Prejudice</td>
+        <td>7824</td>
+        </tr>
+        </table>
+        </div>
+
+        <div style="display: inline-block;">
+        <p>Total number of ratings, reviews, and users on website</p>
+        <table style="display:inline-block;"
+        <tr>
+        <th style="color: #5f0404;">rating count</th>
+        <th style="color: #5f0404;">review count</th>
+        <th style="color: #5f0404;">user count</th>
+        </tr>
+        <tr>
+        <td>1762</td>
+        <td>124</td>
+        <td>2135</td>
+        </tr>
+        
+        </table>
+        </div>
+
+
+   <!--  <div id="right">
     <h1>Similarity Statistics</h1>
     <hr>
     <p>Top 10 most similar books:</p>
-    </div>
+    </div> -->
     </div>
 
     <hr>

@@ -2,49 +2,33 @@
 	<div id="book">
 		<div class="content">
 			<div class="left">
-				<h1>Jane Eyre</h1>
+				<h1>{{data.title}}</h1>
 
 				<hr>
-				<h4>Book uid: 1260</h4>
-				<p class="author">by <a href="">Charlotte Brontë</a></p>
-				<p>Author birthyear: <b>1900</b></p>
-				<p>Year released: <b>1900</b></p>
-				<p>Word count: <b>187,150</b></p>
-				<p>Avg sentence length: <b>17.0147</b></p>
-				<p>Avg word length: <b>4.5</b></p>
-				<p>Avg user rating: <b>7.9/10</b></p>
-				<p>Ratings count: <b>47</b></p>
+				<h4>Book uid: {{data.book_id}}</h4>
+				<p class="author">by <a href="">{{data.author}}</a></p>
+				<p>Author birthyear: <b>{{data.authorbday}}</b></p>
+				<p>Year released: <b>{{data.released}}</b></p>
+				<p>Word count: <b>{{data.wc}}</b></p>
+				<p>Avg sentence length: <b>{{data.wps}}</b></p>
+				<p>Avg word length: <b>{{data.awl}}</b></p>
+				<p>Avg user rating: <b>{{data.avgRating}}/10</b></p>
+				<p>Ratings count: <b>{{data.numRatings}}</b></p>
 				<p class="rating">My rating:</p>
-				<input/>
+				<input :placeholder="data.userRating"/>
 				<button class="rating_button">Rate this book</button>
 
 				<div class="tables">
 					<div class="words">
 						<p><b>Top 5 most popular words:</b></p>
 						<table>
-							<tr style="">
+							<tr>
 								<th>Word</th>
 								<th>Frequency</th>
 							</tr>
-							<tr style="">
-								<td>Darcy</td>
-								<td>1,547</td>
-							</tr>
-							<tr>
-								<td>Jane</td>
-								<td>1,378</td>
-							</tr>
-							<tr>
-								<td>other1</td>
-								<td>1,198</td>
-							</tr>
-							<tr>
-								<td>other2</td>
-								<td>1,198</td>
-							</tr>
-							<tr>
-								<td>other3</td>
-								<td>1,198</td>
+							<tr v-for="word in data.popularWords">
+								<td>{{word.word}}</td>
+								<td>{{word.frequency}}</td>
 							</tr>
 						</table>
 					</div>
@@ -56,30 +40,10 @@
 								<th >Next word</th>
 								<th>Frequency</th>
 							</tr>
-							<tr>
-								<td>Mr.</td>
-								<td>Darcy</td>
-								<td>1,147</td>
-							</tr>
-							<tr>
-								<td>gold</td>
-								<td>curtains</td>
-								<td>778</td>
-							</tr>
-							<tr>
-								<td>than</td>
-								<td>love</td>
-								<td>698</td>
-							</tr>
-							<tr>
-								<td>this</td>
-								<td>one</td>
-								<td>698</td>
-							</tr>
-							<tr>
-								<td>this</td>
-								<td>two</td>
-								<td>698</td>
+							<tr v-for="seq in data.popularSequences">
+								<td>{{seq.word}}</td>
+								<td>{{seq.next_word}}</td>
+								<td>{{seq.times_appear}}</td>
 							</tr>
 						</table>
 					</div>
@@ -92,15 +56,10 @@
 						<th>Time</th>
 						<th>Comment</th>
 					</tr>
-					<tr>
-						<td>alexangel</td>
-						<td>Sat Nov 17 6:09pm</td>
-						<td>Highly recommend this book!</td>
-					</tr>
-					<tr>
-						<td>user2</td>
-						<td>Sat Nov 17 6:10pm</td>
-						<td>comment2</td>
+					<tr v-for="rev in data.reviews">
+						<td>{{rev.username}}</td>
+						<td>{{rev.timestamp}}</td>
+						<td>{{rev.review}}</td>
 					</tr>
 				</table>
 				<p>Post a comment:</p>
@@ -114,20 +73,12 @@
 				<h1>Top 5 similar books</h1>
 				<hr>
 				<ol>
-					<li><a class="booktitle" href="">Jane Eyre</a></li>
-					<li><a class="booktitle" href="">Pride and Prejudice</a></li>
-					<li><a class="booktitle" href="">Huckleberry Finn</a></li>
-					<li><a class="booktitle" href="">Sense and Sensibility</a></li>
-					<li><a class="booktitle" href="">The Bible</a></li>
+					<li v-for="book in data.similarBooks"><a class="booktitle" v-on:click="$emit('getBook', book.uid)">{{book.title}}</a></li>
 				</ol>
 				<h1>Top 5 similar authors</h1>
 				<hr>
 				<ol>
-					<li><a class="booktitle" href="">Author 1</a></li>
-					<li><a class="booktitle" href="">Author 2</a></li>
-					<li><a class="booktitle" href="">Author 3</a></li>
-					<li><a class="booktitle" href="">Author 4</a></li>
-					<li><a class="booktitle" href="">Author 5</a></li>
+					<li v-for="author in data.similarAuthors"><a class="booktitle" v-on:click="">{{author.name}}</a></li>
 				</ol>
 			</div>
 		</div>
@@ -138,15 +89,18 @@
 </template>
 
 <script>
-	import logo from "./../assets/logo.png";
+import logo from "./../assets/logo.png";
 
-	export default	{
-		name: "Book",
-		data ()	{
-			return	{
-			}
+export default	{
+	name: "Book",
+	data ()	{
+		return	{
 		}
-	}
+	},
+	props: [
+		"data"
+	]
+}
 </script>
 
 <style>

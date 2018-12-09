@@ -2,11 +2,11 @@
 	<div id="app">
 		<topbar @toggleView="toggleView(...arguments)"></topbar>
 		<about v-if="view==='about'"></about>
-		<statistics v-if="view==='statistics'"></statistics>
+		<statistics v-if="view==='statistics'" :stats="statisticsData"></statistics>
 		<search v-if="view==='search'" :rowsReturned="rowsReturned" @search="search(...arguments)"></search>
-		<profile v-if="view==='profile'" @getBook="getBook(...arguments)"></profile>
+		<profile v-if="view==='profile'" :data="profileData" @getBook="getBook(...arguments)"></profile>
 		<login v-if="view==='login'"></login>
-		<book v-if="view==='book'"></book>
+		<book v-if="view==='book'" :data="bookData"></book>
 		</div>
 	</div>
 </template>
@@ -29,7 +29,10 @@ export default	{
 			// serverAddr: "https://35.227.92.33:3001",
 			serverAddr: "https://linguisticdb.ngrok.io",
 			rowsReturned: [],
-			view: 'search'
+			view: 'book',
+			statisticsData: null,
+			profileData: null,
+			bookData: null
 		}
 	},
 	components:	{
@@ -44,23 +47,47 @@ export default	{
 	methods:	{
 		toggleView(view)	{
 			this.view = view;
+
+			this.rowsReturned = [];
+			this.statisticsData = null;
+			this.profileData = null;
+			this.bookData = null;
+
+			if (view === "statistics")	{
+				this.refreshStats();
+			}
+
+			if (view === "profile")	{
+				this.getProfile();
+			}
+
+			//TODO: remove this
+			if (view === "book")	{
+				this.getBook(1);
+			}
 		},
 		search(searchText, searchField)	{
 			$.ajax({
 				type: "POST",
 				url: this.serverAddr,
-				data:	{searchText: searchText, searchField: searchField},
+				data:	{
+					basicSearch: true,
+					searchText: searchText,
+					searchField: searchField
+				},
 				success: data =>	{
 					this.rowsReturned = data;
+					console.log(data);
 					console.log("request fulfilled");
 				}
-			})
+			});
 		},
 		searchAdvanced(titleLike, authorLike, bdLow, bdHigh, wpsLow, wpsHigh, wcLow, wcHigh, wlLow, wlHigh, dcLow, dcHigh, rateLow, rateHigh, freqWord, wordsContained, similarTo)	{
 			$.ajax({
 				type: "POST",
 				url: this.serverAddr,
 				data:	{
+					advancedSearch: true,
 					titleLike: titleLike,
 					authorLike: authorLike,
 					bdLow: bdLow,
@@ -83,10 +110,48 @@ export default	{
 					this.rowsReturned = data;
 					console.log("request fulfilled");
 				}
-			})
+			});
 		},
-		getBook(title)	{
-			this.view = "book";
+		refreshStats()	{
+			$.ajax({
+				type: "POST",
+				url: this.serverAddr,
+				data: {
+					stats: true
+				},
+				success: data => {
+					this.statisticsData = data;
+					console.log(this.statisticsData);
+				}
+			});
+		},
+		getProfile()	{
+			$.ajax({
+				type: "POST",
+				url: this.serverAddr,
+				data: {
+					profile: true,
+					username: "maya"	// TODO
+				},
+				success: data => {
+					this.profileData = data;
+					console.log(this.profileData);
+				}
+			});
+		},
+		getBook(book_id)	{
+			$.ajax({
+				type: "POST",
+				url: this.serverAddr,
+				data: {
+					book: true,
+					book_id: book_id
+				},
+				success: data => {
+					this.bookData = data;
+					console.log(this.bookData);
+				}
+			});
 		}
 	}
 }

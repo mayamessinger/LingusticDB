@@ -28,7 +28,7 @@
 			</div>
 			<div class="searchelem">
 				<p>Author name:</p>
-				<input id="authorLike" v-model="authorLike" placeholder="eg. Jane Austen, Bronte" type="text" size="100">
+				<input id="authorLike" v-model="authorLike" placeholder="eg. Jane Austen, Brontë" type="text" size="100">
 			</div>
 			<div class="searchelem">
 				<p>Author born between:</p>
@@ -85,7 +85,7 @@
 		</div>
 		</div>
 		
-		<div id="results" v-model="results">
+		<div id="results">
 			<h5 v-if="rowsReturned.length > 0">{{rowsReturned.length}} results</h5>
 			<div v-for="book in rowsReturned" class="result">
 					<div><a class="booktitle" v-on:click="$emit('bookInfo', book.uid)">{{book.title}}</a></div>

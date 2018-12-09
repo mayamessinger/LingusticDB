@@ -130,55 +130,10 @@
 					<th>count</th>
 					<th>word</th>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>12419</td>
-					<td>hello</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>12419</td>
-					<td>bye</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>12419</td>
-					<td>this</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>12419</td>
-					<td>this</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>12419</td>
-					<td>this</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>12419</td>
-					<td>this</td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<td>12419</td>
-					<td>this</td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<td>12419</td>
-					<td>this</td>
-				</tr>
-				<tr>
-					<td>9</td>
-					<td>12419</td>
-					<td>this</td>
-				</tr>
-				<tr>
-					<td>10</td>
-					<td>12419</td>
-					<td>this</td>
+				<tr v-for="word in stats.commonWordsInfo">
+					<td>{{stats.commonWordsInfo.indexOf(word)}}</td>
+					<td>{{word.word}}</td>
+					<td>{{word.frequency}}</td>
 				</tr>
 			</table>
 		</div>
@@ -192,66 +147,12 @@
 					<th>author 2</th>
 					<th>similarity rating</th>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>
-				<tr>
-					<td>9</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>
-				<tr>
-					<td>10</td>
-					<td>author 1</td>
-					<td>author 2</td>
-					<td>9.98</td>
-				</tr>       
+				<tr v-for="similar in stats.cosineAuthorsInfo">
+					<td>{{stats.cosineAuthorsInfo.indexOf(similar)}}</td>
+					<td>{{similar.author1}}</td>
+					<td>{{similar.author2}}</td>
+					<td>{{similar.cos_similarity}}</td>
+				</tr>     
 			</table>
 		</div>
 
@@ -261,57 +162,14 @@
 				<tr>
 					<th>rank</th>
 					<th>title</th>
+					<th>title</th>
 					<th>similarity rating</th>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>book 1</td>
-					<td>7.72</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>book 1</td>
-					<td>7.72</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>book 1</td>
-					<td>7.72</td>
-				</tr>  
-				<tr>
-					<td>4</td>
-					<td>book 1</td>
-					<td>7.72</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>book 1</td>
-					<td>7.72</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>book 1</td>
-					<td>7.72</td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<td>book 1</td>
-					<td>7.72</td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<td>book 1</td>
-					<td>7.72</td>
-				</tr>
-				<tr>
-					<td>9</td>
-					<td>book 1</td>
-					<td>7.72</td>
-				</tr>
-				<tr>
-					<td>10</td>
-					<td>book 1</td>
-					<td>7.72</td>
+				<tr v-for="similar in stats.cosineBooksInfo">
+					<td>{{stats.cosineBooksInfo.indexOf(similar)}}</td>
+					<td>{{similar.b1.title}}</td>
+					<td>{{similar.b2.title}}/td>
+					<td>{{similar.cos_similarity}}</td>
 				</tr>
 			</table>
 		</div>
@@ -324,55 +182,10 @@
 					<th>title</th>
 					<th>download count</th>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>book 1</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>book 1</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>book 1</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>book 1</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>book 1</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>book 1</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<td>book 1</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<td>book 1</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>9</td>
-					<td>book 1</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>10</td>
-					<td>book 1</td>
-					<td>24015</td>
+				<tr v-for="book in stats.downloadInfo">
+					<td>{{stats.downloadInfo.indexOf(book)}}</td>
+					<td>{{book.title}}</td>
+					<td>{{book.download}}</td>
 				</tr>
 			</table>
 		</div>
@@ -386,65 +199,11 @@
 					<th>next word</th>
 					<th>count</th>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>7</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>8</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>9</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
-				</tr>
-				<tr>
-					<td>10</td>
-					<td>this</td>
-					<td>was</td>
-					<td>24015</td>
+				<tr v-for="seq in stats.sequencesInfo">
+					<td>{{stats.sequencesInfo.indexOf(seq)}}</td>
+					<td>{{seq.word}}</td>
+					<td>{{seq.nextWord}}</td>
+					<td>{{seq.times_appear}}</td>
 				</tr>
 			</table>
 		</div>
@@ -457,47 +216,10 @@
 					<th>book</th>
 					<th>avg user rating</th>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
-				</tr><tr>
-					<td>3</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
-				</tr><tr>
-					<td>4</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
-				</tr><tr>
-					<td>5</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
-				</tr><tr>
-					<td>6</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
-				</tr><tr>
-					<td>7</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
-				</tr><tr>
-					<td>8</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
-				</tr><tr>
-					<td>9</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
-				</tr><tr>
-					<td>10</td>
-					<td>Pride and Prejudice</td>
-					<td>7.3/10</td>
+				<tr v-for="book in stats.bestRatingInfo">
+					<td>{{stats.bestRatingInfo.indexOf(book)}}</td>
+					<td>{{book.title}}</td>
+					<td>{{book.rating}}/10</td>
 				</tr>
 			</table>
 		</div>
@@ -510,47 +232,10 @@
 					<th>book</th>
 					<th>rating count</th>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
-				</tr><tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
-				</tr><tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
-				</tr><tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
-				</tr><tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
-				</tr><tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
-				</tr><tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
-				</tr><tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
-				</tr><tr>
-					<td>1</td>
-					<td>Pride and Prejudice</td>
-					<td>7824</td>
+				<tr v-for="book in stats.mostRatingInfo">
+					<td>{{stats.mostRatingInfo.indexOf(book)}}</td>
+					<td>{{book.title}}</td>
+					<td>{{book.count}}</td>
 				</tr>
 			</table>
 		</div>
@@ -564,9 +249,9 @@
 					<th>user count</th>
 				</tr>
 				<tr>
-					<td>1762</td>
-					<td>124</td>
-					<td>2135</td>
+					<!-- <td>{{stats.totalRatingInfo[0].count}}</td>
+					<td>{{stats.totalReviewInfo[0].count}}</td>
+					<td>{{stats.totalUsersInfo[0].count}}</td> -->
 				</tr>
 			</table>
 		</div>
@@ -577,14 +262,35 @@
 </template>
 
 <script>
-	import logo from "./../assets/logo.png";
+import logo from "./../assets/logo.png";
 
-	export default	{
-	 name: "Statistics",
-	 data ()	{
+export default	{
+	name: "Statistics",
+	data ()	{
 		return	{
 		}
-	}
+	},
+	props: [
+		"stats"
+		/*
+			booksInfo: null,
+			authorsInfo: null,
+			wpsInfo: null,
+			avgWordLength: null,
+			wordCountInfo: null,
+			----
+			commonWordsInfo: null,
+			cosineAuthorsInfo: null,
+			cosineBooksInfo: null,
+			downloadInfo: null,
+			sequencesInfo: null,
+			bestRatingInfo: null,
+			mostRatingInfo: null,
+			totalRatingInfo: null,
+			totalReviewInfo: null,
+			totalUsersInfo: null
+		*/
+	]
 }
 </script>
 

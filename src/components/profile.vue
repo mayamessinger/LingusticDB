@@ -4,8 +4,8 @@
 		 <div class="left">
 			<h1>My profile</h1>
 			<hr>
-			<p>My username: alexangel</p>
-			<p>My email: alexangel@email.com</p>
+			<p>My username: {{data.username}}</p>
+			<p>My email: {{data.email}}</p>
 			<hr>
 			<p><b>Change password</b></p>
 			<p>Enter old password</p>
@@ -20,18 +20,10 @@
 		<div class="right">
 			<h1>Books I rated</h1>
 			<hr>
-			<p><a v-on:click="$emit('getBook', 'Jane Eyre')">Jane Eyre</a><br>My rating: 7/10</p>
-			<p><a href="">Book 2</a><br>My rating: 8/10</p>
-			<p><a href="">Book 3</a><br>My rating: 7/10</p>
-			<p><a href="">Book 4</a><br>My rating: 6/10</p>
-			<p><a href="">Book 5</a><br>My rating: 7/10</p>
+			<p v-for="book in data.booksRated"><a v-on:click="$emit('getBook', book.uid)">{{book.title}}</a><br>My rating: {{book.rating}}/10</p>
 			<h1>Books I commented on</h1>
 			<hr>
-			<p><a v-on:click="$emit('getBook', 'Jane Eyre')">Jane Eyre</a></p>
-			<p><a href="">Book 2</a></p>
-			<p><a href="">Book 3</a></p>
-			<p><a href="">Book 4</a></p>
-			<p><a href="">Book 5</a></p>
+			<p v-for="book in data.booksReviewed"><a v-on:click="$emit('getBook', book.uid)">{{book.title}}</a><br></p>
 		</div>
 	</div>
 
@@ -41,14 +33,17 @@
 </template>
 
 <script>
-	import logo from "./../assets/logo.png";
+import logo from "./../assets/logo.png";
 
-	export default	{
-	 name: "Profile",
-	 data ()	{
+export default	{
+	name: "Profile",
+	data ()	{
 		return	{
 		}
-	}
+	},
+	props: [
+		"data"
+	]
 }
 </script>
 

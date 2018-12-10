@@ -63,7 +63,7 @@ export default	{
 
 			//TODO: remove this
 			if (view === "book")	{
-				this.getBook(1);
+				this.getBook(219);
 			}
 		},
 		search(searchText, searchField)	{

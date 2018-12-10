@@ -8,10 +8,11 @@
 				<h4>Book uid: {{data.book_id}}</h4>
 				<p class="author">by <a href="">{{data.author}}</a></p>
 				<p>Author birthyear: <b>{{data.authorbday}}</b></p>
-				<p>Year released: <b>{{data.released}}</b></p>
+				<p>Date released: <b>{{data.released}}</b></p>
 				<p>Word count: <b>{{data.wc}}</b></p>
-				<p>Avg sentence length: <b>{{data.wps}}</b></p>
-				<p>Avg word length: <b>{{data.awl}}</b></p>
+				<p>Avg sentence length: <b>{{data.wps}} words</b></p>
+				<p>Avg word length: <b>{{data.awl}} characters</b></p>
+				<p>Number of downloads: <b>{{data.numDownloads}}</b></p>
 				<p>Avg user rating: <b>{{data.avgRating}}/10</b></p>
 				<p>Ratings count: <b>{{data.numRatings}}</b></p>
 				<p class="rating">My rating:</p>
@@ -26,7 +27,7 @@
 								<th>Word</th>
 								<th>Frequency</th>
 							</tr>
-							<tr v-for="word in data.popularWords">
+							<tr v-for="word in data.commonWords">
 								<td>{{word.word}}</td>
 								<td>{{word.frequency}}</td>
 							</tr>

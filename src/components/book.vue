@@ -6,7 +6,7 @@
 
 				<hr>
 				<h4>Book uid: {{data.book_id}}</h4>
-				<p class="author">by <a href="">{{data.author}}</a></p>
+				<p class="author">by <a v-on:click="$emit('authorSearch', data.author)">{{data.author}}</a></p>
 				<p>Author birthyear: <b>{{data.authorbday}}</b></p>
 				<p>Date released: <b>{{data.released}}</b></p>
 				<p>Word count: <b>{{data.wc}}</b></p>

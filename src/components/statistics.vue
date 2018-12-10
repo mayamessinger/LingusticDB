@@ -131,7 +131,7 @@
 					<th>word</th>
 				</tr>
 				<tr v-for="word in stats.commonWordsInfo">
-					<td>{{stats.commonWordsInfo.indexOf(word)}}</td>
+					<td>{{stats.commonWordsInfo.indexOf(word) + 1}}</td>
 					<td>{{word.word}}</td>
 					<td>{{word.frequency}}</td>
 				</tr>
@@ -148,7 +148,7 @@
 					<th>similarity rating</th>
 				</tr>
 				<tr v-for="similar in stats.cosineAuthorsInfo">
-					<td>{{stats.cosineAuthorsInfo.indexOf(similar)}}</td>
+					<td>{{stats.cosineAuthorsInfo.indexOf(similar) + 1}}</td>
 					<td>{{similar.author1}}</td>
 					<td>{{similar.author2}}</td>
 					<td>{{similar.cos_similarity}}</td>
@@ -166,7 +166,7 @@
 					<th>similarity rating</th>
 				</tr>
 				<tr v-for="similar in stats.cosineBooksInfo">
-					<td>{{stats.cosineBooksInfo.indexOf(similar)}}</td>
+					<td>{{stats.cosineBooksInfo.indexOf(similar) + 1}}</td>
 					<td>{{similar.b1.title}}</td>
 					<td>{{similar.b2.title}}/td>
 					<td>{{similar.cos_similarity}}</td>
@@ -183,7 +183,7 @@
 					<th>download count</th>
 				</tr>
 				<tr v-for="book in stats.downloadInfo">
-					<td>{{stats.downloadInfo.indexOf(book)}}</td>
+					<td>{{stats.downloadInfo.indexOf(book) + 1}}</td>
 					<td>{{book.title}}</td>
 					<td>{{book.download}}</td>
 				</tr>
@@ -200,7 +200,7 @@
 					<th>count</th>
 				</tr>
 				<tr v-for="seq in stats.sequencesInfo">
-					<td>{{stats.sequencesInfo.indexOf(seq)}}</td>
+					<td>{{stats.sequencesInfo.indexOf(seq) + 1}}</td>
 					<td>{{seq.word}}</td>
 					<td>{{seq.nextWord}}</td>
 					<td>{{seq.times_appear}}</td>
@@ -217,7 +217,7 @@
 					<th>avg user rating</th>
 				</tr>
 				<tr v-for="book in stats.bestRatingInfo">
-					<td>{{stats.bestRatingInfo.indexOf(book)}}</td>
+					<td>{{stats.bestRatingInfo.indexOf(book) + 1}}</td>
 					<td>{{book.title}}</td>
 					<td>{{book.rating}}/10</td>
 				</tr>
@@ -233,7 +233,7 @@
 					<th>rating count</th>
 				</tr>
 				<tr v-for="book in stats.mostRatingInfo">
-					<td>{{stats.mostRatingInfo.indexOf(book)}}</td>
+					<td>{{stats.mostRatingInfo.indexOf(book) + 1}}</td>
 					<td>{{book.title}}</td>
 					<td>{{book.count}}</td>
 				</tr>

@@ -9,12 +9,12 @@
 			<hr>
 			<p><b>Change password</b></p>
 			<p>Enter old password</p>
-			<input type="password" placeholder="Enter old password" />
+			<input v-model="oldPassword" type="password" placeholder="Enter old password" />
 			<p>Enter new password</p>
-			<input type="password" placeholder="Enter new password"/>
+			<input v-model="newPassword" type="password" placeholder="Enter new password"/>
 			<p>Enter new password again</p>
-			<input type="password" placeholder="Enter new password again"/>
-			<button>Change password</button>
+			<input v-on:keyUp.enter="$emit('changePW', encode(oldPassword), encode(newPassword), encode(newPasswordConf))" v-model="newPasswordConf" type="password" placeholder="Enter new password again"/>
+			<button v-on:click="$emit('changePW', encode(oldPassword), encode(newPassword), encode(newPasswordConf))">Change password</button>
 		</div>
 
 		<div class="right">
@@ -39,6 +39,14 @@ export default	{
 	name: "Profile",
 	data ()	{
 		return	{
+			oldPassword: null,
+			newPassword: null,
+			newPasswordConf: null
+		}
+	},
+	methods: {
+		encode(pw)	{
+			return btoa(pw);
 		}
 	},
 	props: [

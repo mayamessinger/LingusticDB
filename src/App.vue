@@ -1,12 +1,12 @@
 <template>
 	<div id="app">
-		<topbar @toggleView="toggleView(...arguments)"></topbar>
+		<topbar :user="user" @toggleView="toggleView(...arguments)"></topbar>
 		<about v-if="view==='about'"></about>
 		<statistics v-if="view==='statistics'" :stats="statisticsData"></statistics>
-		<search v-if="view==='search'" :rowsReturned="rowsReturned" @search="search(...arguments)"></search>
-		<profile v-if="view==='profile'" :data="profileData" @getBook="getBook(...arguments)"></profile>
+		<search v-if="view==='search'" :rowsReturned="rowsReturned" @search="search(...arguments)" @searchAdvanced="searchAdvanced(...arguments)" @bookInfo="getBook(...arguments)" @authorSearch="authorSearch(...arguments)"></search>
+		<profile v-if="view==='profile'" :data="profileData" @changePW="changePW(...arguments)" @getBook="getBook(...arguments)"></profile>
 		<login v-if="view==='login'" @login="login(...arguments)" @makeUser="makeUser(...arguments)"></login>
-		<book v-if="view==='book'" :data="bookData"></book>
+		<book v-if="view==='book'" :data="bookData" @authorSearch="authorSearch(...arguments)"></book>
 		</div>
 	</div>
 </template>
@@ -29,7 +29,7 @@ export default	{
 			// serverAddr: "https://35.227.92.33:3001",
 			serverAddr: "https://linguisticdb.ngrok.io",
 			rowsReturned: [],
-			view: 'book',
+			view: 'search',
 			user: null,
 			statisticsData: null,
 			profileData: null,
@@ -49,22 +49,18 @@ export default	{
 		toggleView(view)	{
 			this.view = view;
 
-			this.rowsReturned = [];
 			this.statisticsData = null;
 			this.profileData = null;
 			this.bookData = null;
 
 			if (view === "statistics")	{
+				this.rowsReturned = [];
 				this.refreshStats();
 			}
 
 			if (view === "profile")	{
+				this.rowsReturned = [];
 				this.getProfile();
-			}
-
-			//TODO: remove this
-			if (view === "book")	{
-				this.getBook(219);
 			}
 		},
 		search(searchText, searchField)	{
@@ -78,7 +74,6 @@ export default	{
 				},
 				success: data =>	{
 					this.rowsReturned = data;
-					console.log(data);
 					console.log("request fulfilled");
 				}
 			});
@@ -109,6 +104,7 @@ export default	{
 				},
 				success: data =>	{
 					this.rowsReturned = data;
+					console.log(data);
 					console.log("request fulfilled");
 				}
 			});
@@ -139,6 +135,31 @@ export default	{
 					console.log(this.profileData);
 				}
 			});
+		},
+		changePW(oldPW, newPW, newPWC)	{
+			if (newPW === newPWC)	{
+				$.ajax({
+					type: "POST",
+					url: this.serverAddr,
+					data: {
+						changePW: true,
+						username: this.user,
+						old: oldPW,
+						newPW: newPW
+					},
+					success: data => {
+						if (data === true)	{
+							alert("Password successfully changed");
+						}
+						else	{
+							alert("Password change failed");
+						}
+					}
+				});
+			}
+			else 	{
+				alert("New password does not match confirmation");
+			}
 		},
 		login(username, password)	{
 			$.ajax({
@@ -195,10 +216,14 @@ export default	{
 					book_id: book_id
 				},
 				success: data => {
+					this.view = "book";
 					this.bookData = data;
-					console.log(this.bookData);
 				}
 			});
+		},
+		authorSearch(name)	{
+			this.toggleView("search");
+			this.search(name, "Author");
 		}
 	}
 }

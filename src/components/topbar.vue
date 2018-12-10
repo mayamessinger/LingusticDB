@@ -3,11 +3,8 @@
 	    <div class="topitem"><a v-on:click="$emit('toggleView', 'about')">About</a></div>
 	    <div class="topitem"><a v-on:click="$emit('toggleView', 'statistics')">Statistics</a></div>
 	    <div class="topitem"><a v-on:click="$emit('toggleView', 'search')">Search</a></div>
-
-      <div class="topitem"><a v-on:click="$emit('toggleView', 'book')">Book</a></div>
-
-	    <div class="topitemright"><a v-on:click="$emit('toggleView', 'login')">Sign in</a></div>
-	    <div class="topitemright"><a v-on:click="$emit('toggleView', 'profile')">My profile</a></div>
+	    <div v-if="user === null" class="topitemright"><a v-on:click="$emit('toggleView', 'login')">Sign in</a></div>
+	    <div v-if="user !== null" class="topitemright"><a v-on:click="$emit('toggleView', 'profile')">My profile</a></div>
 	</div>
 </template>
 
@@ -17,7 +14,10 @@ export default {
 	data () {
     return {
     }
-	}
+	},
+  props: [
+    "user"
+  ]
 }
 </script>
 

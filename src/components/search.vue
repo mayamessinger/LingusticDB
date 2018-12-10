@@ -89,7 +89,7 @@
 			<h5 v-if="rowsReturned.length > 0">{{rowsReturned.length}} results</h5>
 			<div v-for="book in rowsReturned" class="result">
 					<div><a class="booktitle" v-on:click="$emit('bookInfo', book.uid)">{{book.title}}</a></div>
-					<div v-if="book.name">by <a href="#">{{book.name}}</a></div>
+					<div v-if="book.name">by <a v-on:click="$emit('authorSearch', book.name)">{{book.name}}</a></div>
 					<div v-if="book.rating">Rating:	{{book.rating}}/10</div>
 					<div v-if="book.total_count">Word count:	{{book.total_count}}</div>
 					<div v-if="book.link_to_book">Project Gutenberg link: <a :href="book.link_to_book">{{book.link_to_book}}</a></div>
@@ -108,18 +108,18 @@ export default	{
 			searchField: null,
 			titleLike: null,
 			authorLike: null,
-			bdLow: null,
-			bdHigh: null,
-			wpsLow: null,
-			wpsHigh: null,
-			wcLow: null,
-			wcHigh: null,
-			wlLow: null,
-			wlHigh: null,
-			dcLow: null,
-			dcHigh: null,
-			rateLow: null,
-			rateHigh: null,
+			bdLow: -800,
+			bdHigh: 1985,
+			wpsLow: 0,
+			wpsHigh: 27,
+			wcLow: 0,
+			wcHigh: 3.0e+06,
+			wlLow: 0,
+			wlHigh: 7,
+			dcLow: 0,
+			dcHigh: 45000,
+			rateLow: 0,
+			rateHigh: 10,
 			freqWord: null,
 			wordsContained: null,
 			similarTo: null
@@ -218,5 +218,6 @@ export default	{
 }
 #search #results a	{
 	color: #5f0404;
+	text-decoration: underline;
 }
 </style>

@@ -249,9 +249,9 @@
 					<th>user count</th>
 				</tr>
 				<tr>
-					<!-- <td>{{stats.totalRatingInfo[0].count}}</td>
-					<td>{{stats.totalReviewInfo[0].count}}</td>
-					<td>{{stats.totalUsersInfo[0].count}}</td> -->
+					<td>{{stats.totalRatingInfo}}</td>
+					<td>{{stats.totalReviewInfo}}</td>
+					<td>{{stats.totalUserInfo}}</td>
 				</tr>
 			</table>
 		</div>

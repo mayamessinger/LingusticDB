@@ -15,9 +15,11 @@
 				<p>Number of downloads: <b>{{data.numDownloads}}</b></p>
 				<p>Avg user rating: <b>{{data.avgRating}}/10</b></p>
 				<p>Ratings count: <b>{{data.numRatings}}</b></p>
-				<p class="rating">My rating:</p>
-				<input :placeholder="data.userRating"/>
-				<button class="rating_button">Rate this book</button>
+				<div v-if="user">
+					<p class="rating">My rating:</p>
+					<input v-model="rating" v-on:keyUp.enter="$emit('rate', data.book_id, rating)" :placeholder="data.userRating" type="number"/>
+					<button @click="$emit('rate', data.book_id, rating)" class="rating_button">Rate this book</button>
+				</div>
 
 				<div class="tables">
 					<div class="words">
@@ -63,10 +65,10 @@
 						<td>{{rev.review}}</td>
 					</tr>
 				</table>
-				<p>Post a comment:</p>
-				<div class="commentarea">
-					<textarea class="comment" name="comment" cols="40" rows="5"></textarea>
-					<button class="publish">Publish comment</button>
+				<p v-if="user">Post a comment:</p>
+				<div v-if="user" class="commentarea">
+					<textarea v-model="review" class="comment" name="comment" cols="40" rows="5"></textarea>
+					<button @click="$emit('review', data.book_id, review)" class="publish">Publish comment</button>
 				</div>
 			</div>
 
@@ -96,9 +98,12 @@ export default	{
 	name: "Book",
 	data ()	{
 		return	{
+			rating: null,
+			review: null
 		}
 	},
 	props: [
+		"user",
 		"data"
 	]
 }

@@ -6,7 +6,7 @@
 		<search v-if="view==='search'" :rowsReturned="rowsReturned" @search="search(...arguments)" @searchAdvanced="searchAdvanced(...arguments)" @bookInfo="getBook(...arguments)" @authorSearch="authorSearch(...arguments)"></search>
 		<profile v-if="view==='profile'" :data="profileData" @changePW="changePW(...arguments)" @getBook="getBook(...arguments)"></profile>
 		<login v-if="view==='login'" @login="login(...arguments)" @makeUser="makeUser(...arguments)"></login>
-		<book v-if="view==='book'" :data="bookData" @authorSearch="authorSearch(...arguments)"></book>
+		<book v-if="view==='book'" :user="user" :data="bookData" @authorSearch="authorSearch(...arguments)" @rate="rateBook(...arguments)" @review="reviewBook(...arguments)"></book>
 		</div>
 	</div>
 </template>
@@ -144,7 +144,7 @@ export default	{
 					data: {
 						changePW: true,
 						username: this.user,
-						old: oldPW,
+						oldPW: oldPW,
 						newPW: newPW
 					},
 					success: data => {
@@ -224,6 +224,36 @@ export default	{
 		authorSearch(name)	{
 			this.toggleView("search");
 			this.search(name, "Author");
+		},
+		rateBook(book_id, rating)	{
+			$.ajax({
+				type: "POST",
+				url: this.serverAddr,
+				data: {
+					rate: true,
+					username: this.user,
+					book_id: book_id,
+					rating: rating
+				},
+				success: data => {
+					this.getBook(book_id);
+				}
+			});
+		},
+		reviewBook(book_id, review)	{
+			$.ajax({
+				type: "POST",
+				url: this.serverAddr,
+				data: {
+					rev: true,
+					username: this.user,
+					book_id: book_id,
+					review: review
+				},
+				success: data => {
+					this.getBook(book_id);
+				}
+			});
 		}
 	}
 }

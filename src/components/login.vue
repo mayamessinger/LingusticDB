@@ -5,21 +5,21 @@
 				<h1>Sign in</h1>
 				<hr>
 				<p>Username:</p>
-				<input type="text" placeholder="Enter username"/>
+				<input v-model="username" type="text" placeholder="Enter username"/>
 				<p>Password:</p>
-				<input type="password" placeholder="Enter password"/>
-				<button class="publish">Sign in</button>
+				<input v-model="password" v-on:keyup.enter="$emit('login', username, encode(password))" type="password" placeholder="Enter password"/>
+				<button @click="$emit('login', username, encode(password))" class="publish">Sign in</button>
 			</div>
 			<div class="right">
 				<h1>Create free account</h1>
 				<hr>
 				<p>Username:</p>
-				<input type="text" placeholder="Enter username"/>
+				<input v-model="newUsername" type="text" placeholder="Enter username"/>
 				<p>Email:</p>
-				<input type="text" placeholder="Enter email"/>
+				<input v-model="newEmail" type="text" placeholder="Enter email"/>
 				<p>Password:</p>
-				<input type="password" placeholder="Enter password"/>
-				<button>Create free account</button>
+				<input v-model="newPassword" v-on:keyup.enter="$emit('makeUser', newUsername, newEmail, encode(newPassword))" type="password" placeholder="Enter password"/>
+				<button @click="$emit('makeUser', newUsername, newEmail, encode(newPassword))">Create free account</button>
 			</div>
 		</div>
 
@@ -35,6 +35,16 @@ export default	{
 	name: "Login",
 	data ()	{
 		return	{
+			username: null,
+			password: null,
+			newUsername: null,
+			newEmail: null,
+			newPassword: null
+		}
+	},
+	methods: {
+		encode(pw)	{
+			return btoa(pw);
 		}
 	}
 }

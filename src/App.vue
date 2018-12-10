@@ -5,7 +5,7 @@
 		<statistics v-if="view==='statistics'" :stats="statisticsData"></statistics>
 		<search v-if="view==='search'" :rowsReturned="rowsReturned" @search="search(...arguments)"></search>
 		<profile v-if="view==='profile'" :data="profileData" @getBook="getBook(...arguments)"></profile>
-		<login v-if="view==='login'"></login>
+		<login v-if="view==='login'" @login="login(...arguments)" @makeUser="makeUser(...arguments)"></login>
 		<book v-if="view==='book'" :data="bookData"></book>
 		</div>
 	</div>
@@ -30,6 +30,7 @@ export default	{
 			serverAddr: "https://linguisticdb.ngrok.io",
 			rowsReturned: [],
 			view: 'book',
+			user: null,
 			statisticsData: null,
 			profileData: null,
 			bookData: null
@@ -44,7 +45,7 @@ export default	{
 		Login,
 		Book
 	},
-	methods:	{
+	methods:	{	
 		toggleView(view)	{
 			this.view = view;
 
@@ -131,13 +132,59 @@ export default	{
 				url: this.serverAddr,
 				data: {
 					profile: true,
-					username: "maya"	// TODO
+					username: this.user
 				},
 				success: data => {
 					this.profileData = data;
 					console.log(this.profileData);
 				}
 			});
+		},
+		login(username, password)	{
+			$.ajax({
+				type: "POST",
+				url: this.serverAddr,
+				data: {
+					login: true,
+					username: username,
+					password: password
+				},
+				success: data => {
+					if (data === true)	{
+						this.user = username;
+						this.toggleView("profile");
+					}
+					else	{
+						alert("Login failed");
+					}
+				}
+			});
+		},
+		makeUser(username, email, password) {
+			if (email.includes("@") && email.includes("."))	{
+				$.ajax({
+					type: "POST",
+					url: this.serverAddr,
+					data: {
+						makeUser: true,
+						username: username,
+						email: email,
+						password: password
+					},
+					success: data => {
+						if (data === true)	{
+							this.user = username;
+							this.toggleView("profile");
+						}
+						else	{
+							alert("Account creation failed");
+						}
+					}
+				});
+			}
+			else 	{
+				alert("Invalid email");
+			}
 		},
 		getBook(book_id)	{
 			$.ajax({

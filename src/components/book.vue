@@ -2,7 +2,7 @@
 	<div id="book">
 		<div class="content">
 			<div class="left">
-				<h1>{{data.title}}</h1>
+				<h1><a :href="data.link-to_book">{{data.title}}</a></h1>
 
 				<hr>
 				<h4>Book uid: {{data.book_id}}</h4>

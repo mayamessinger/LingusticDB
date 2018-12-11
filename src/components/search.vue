@@ -3,7 +3,7 @@
 		<div class="title"><img class="logo" src="./../assets/logo.png" alt="LinguisticDB Logo"></div>
 
 		<div id="searchSpecs" v-if="!asToggle">
-			<input id="box" v-model="searchText" v-on:keyup.enter="$emit('search', searchText, searchField)" placeholder="eg. Pride and Prejudice, Charlotte Bronte, 1920" type="text" size="100">
+			<input id="box" v-model="searchText" v-on:keyup.enter="$emit('search', searchText, searchField)" placeholder="eg. Pride and Prejudice, Charlotte Brontë, 1920" type="text" size="100">
 			<select id="select" v-model="searchField">
 				<option disabled value="">Field</option>
 				<option>Title</option>
@@ -76,7 +76,7 @@
 			</div>
 			<div class="searchelem">
 				<p>Similar to book (uid):</p>
-				<input id="similarTo" v-model="similarTo" placeholder="eg. 1342" type="text" size="100">
+				<input id="similarTo" v-model="similarTo" placeholder="eg. 1342" type="integer" size="100">
 			</div>
 
 

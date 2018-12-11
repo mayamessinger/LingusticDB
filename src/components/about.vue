@@ -4,7 +4,7 @@
         <div class="left">
             <h1>About</h1>
             <hr>
-            <p>LinguisticBD is a project that provides an extensive search <b>interface</b> for <b>Project Gutenberg</b> books. We strive to make the <b>exploration of knowdedge</b> and literature more accessible to all, and provide a proprietary comparison algorithm that compares books and authors from all centuries based on <b>linguistic features.</b></p>
+            <p>LinguisticBD is a project that provides an extensive search <b>interface</b> for <b>Project Gutenberg</b> books. We strive to make the <b>exploration of knowledge</b> and literature more accessible to all, and provide a proprietary comparison algorithm that compares books and authors from all centuries based on <b>linguistic features.</b></p>
             <p>The advanced search features of this website let users filter and compare books based on very <b>specific characteristics.</b></p>
             <p>The Statistics page provides general statistics about the LinguisticDB dataset.</p>
             <p>We are independent from the Project Gutenberg.</p>

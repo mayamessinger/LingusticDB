@@ -1,7 +1,7 @@
 # linguisticdb-client
 
 > Front-end client for Duke CS 316 project
-> Contains App.js, which has all methods that communicate with server to request data
+> Contains /src/App.vue, which has all methods that communicate with server to request data
 > Contains in /src/components/ .vue files for each "page" of front-end, and the html files they are based on
 
 ## Build Setup

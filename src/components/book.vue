@@ -29,7 +29,7 @@
 								<th>Word</th>
 								<th>Frequency</th>
 							</tr>
-							<tr v-for="word in data.commonWords">
+							<tr v-for="word in data.popularWords">
 								<td>{{word.word}}</td>
 								<td>{{word.frequency}}</td>
 							</tr>
@@ -76,12 +76,12 @@
 				<h1>Top 5 similar books</h1>
 				<hr>
 				<ol>
-					<li v-for="book in data.similarBooks"><a class="booktitle" v-on:click="$emit('getBook', book.uid)">{{book.title}}</a></li>
+					<li v-for="book in data.similarBooks"><a class="booktitle" v-on:click="$emit('getBook', book.uid2)">{{book.title}}</a></li>
 				</ol>
 				<h1>Top 5 similar authors</h1>
 				<hr>
 				<ol>
-					<li v-for="author in data.similarAuthors"><a class="booktitle" v-on:click="">{{author.name}}</a></li>
+					<li v-for="author in data.similarAuthors"><a class="booktitle" v-on:click="$emit('authorSearch', author.author2)">{{author.author2}}</a></li>
 				</ol>
 			</div>
 		</div>

@@ -167,8 +167,8 @@
 				</tr>
 				<tr v-for="similar in stats.cosineBooksInfo">
 					<td>{{stats.cosineBooksInfo.indexOf(similar) + 1}}</td>
-					<td>{{similar.b1.title}}</td>
-					<td>{{similar.b2.title}}/td>
+					<td>{{similar.book1}}</td>
+					<td>{{similar.book2}}</td>
 					<td>{{similar.cos_similarity}}</td>
 				</tr>
 			</table>
@@ -202,7 +202,7 @@
 				<tr v-for="seq in stats.sequencesInfo">
 					<td>{{stats.sequencesInfo.indexOf(seq) + 1}}</td>
 					<td>{{seq.word}}</td>
-					<td>{{seq.nextWord}}</td>
+					<td>{{seq.next_word}}</td>
 					<td>{{seq.times_appear}}</td>
 				</tr>
 			</table>

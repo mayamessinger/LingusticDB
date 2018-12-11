@@ -6,7 +6,7 @@
 		<search v-if="view==='search'" :rowsReturned="rowsReturned" @search="search(...arguments)" @searchAdvanced="searchAdvanced(...arguments)" @bookInfo="getBook(...arguments)" @authorSearch="authorSearch(...arguments)"></search>
 		<profile v-if="view==='profile'" :data="profileData" @changePW="changePW(...arguments)" @getBook="getBook(...arguments)"></profile>
 		<login v-if="view==='login'" @login="login(...arguments)" @makeUser="makeUser(...arguments)"></login>
-		<book v-if="view==='book'" :user="user" :data="bookData" @authorSearch="authorSearch(...arguments)" @rate="rateBook(...arguments)" @review="reviewBook(...arguments)"></book>
+		<book v-if="view==='book'" :user="user" :data="bookData" @authorSearch="authorSearch(...arguments)" @rate="rateBook(...arguments)" @review="reviewBook(...arguments)" @getBook="getBook(...arguments)"></book>
 		</div>
 	</div>
 </template>

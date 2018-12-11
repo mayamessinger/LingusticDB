@@ -16,6 +16,10 @@ Alex:
 John:
 
 Ryan:
+* Wrote and successfully ran Python script to generate the data for the Sequences relation in the database (required creating complex data structure that would store the book that the sequence applied to, a word, a word that followed this word, and how many times the word followed this word)
+* Wrote and successfully Python script to generate the data for the CommonWords relation in the database (required counting the instances of each word in a Project Gutenberg book and then selectively filtering the results in order to make them meaningful)
+* Updated load.sql file in the database in order to be able to load the data for the aforementioned 2 relations of the table
+* Made the decision that the parts-of-speech analysis that could feasibly be performed and displayed in the database would not display enough useful or relevant information to truly be included within the database
 
 
 === MILESTONE 2 members.txt ===

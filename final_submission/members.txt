@@ -1,0 +1,63 @@
+=== SINCE MILESTONE 2 ===
+
+
+Maya:
+
+Alex:
+* Completed the HTML/CSS part of the website
+* Designed the website logo
+* Wrote the SQL queries for the "Advanced Search" feature and "Statistics" page
+* Implemented 9 additional indexes to improve the performance of the "Advanced Search" feature
+* Updated the E/R diagram
+
+John:
+
+Ryan:
+
+
+=== MILESTONE 2 members.txt ===
+John:
+Added to the metrics we will use
+Creating cosine similarity Python files to generate similarity measures for authors and books
+Generated ideas for additional text analysis and user functions
+Worked on this milestone update
+
+Ryan:
+Added to the metrics we will use
+Creating parts-of-speech analysis Python files 
+
+Alex:
+Created database and tables
+Figure out how to store user passwords securely with hash function
+Write SQL queries to explore the data
+Write views if needed
+
+Maya:
+Populated database by parsing text and xml files
+Wrote and deployed webapp server
+Running perpetually through ngrok and sytemctl
+Connected database and server
+Connected server to front-end
+Wrote front-end (super basic right now)
+https://mayamessinger.net/LinguisticDB
+
+=== MILESTONE 1 members.txt ===
+Alex Angel
+
+John Benhart
+
+Maya Messinger
+* created project Git repo w/ basic Milestone 1 files
+* tested interfacing with Project Gutenberg
+	* grab basic data
+	* wrote script to parse all books from Project Gutenberg for basic data
+* create initial sample database schema and sample data
+* create sample queries to sample database
+* work on progress report
+
+Ryan Piersma
+* created project E/R diagram
+* created database schema
+* worked on web interface design
+* worked on progress report
+* worked on deciding what similarity metrics to use between books and authors

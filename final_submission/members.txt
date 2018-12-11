@@ -1,7 +1,10 @@
 === SINCE MILESTONE 2 ===
-
-
 Maya:
+* From the HTML and CSS files Alex made, converted everything directly to Vue.js templates
+* Wrote all of the JavaScript, to create front-end website with interaction that pulled all information from the database
+	* client methods (using Ajax HTTP POST requests) to call server, server methods to query/update database, handle returned data, format/parse for display in front-end
+	* implemented user features - creating account, signing in, changing password, rating/reviewing books, and connected to database
+* Wrote server to handle front-end requests, query and update database (npm module pg), and return db information to front-end. Alex wrote many queries and I added some
 
 Alex:
 * Completed the HTML/CSS part of the website

@@ -1,8 +1,10 @@
 # linguisticdb-client
 
-> Front-end client for Duke CS 316 project
-> Contains /src/App.vue, which has all methods that communicate with server to request data
-> Contains in /src/components/ .vue files for each "page" of front-end, and the html files they are based on
+> Front-end client for Duke CS 316 project  
+> Contains /src/App.vue, which has all methods that communicate with server to request data  
+> Contains in /src/components/ .vue files for each "page" of front-end, and the html files they are based on  
+> server repo: https://github.com/mayamessinger/LinguisticDB-server  
+> database repo: https://github.com/mayamessinger/LinguisticDB-database  
 
 ## Build Setup
 
